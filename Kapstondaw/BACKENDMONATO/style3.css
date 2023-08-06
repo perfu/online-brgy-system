@@ -10,8 +10,8 @@
   height: 50px;
   width: 100%;
   background: rgba(0, 0, 0, 0.05);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); 
-  display: flex; 
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
   flex-direction: row;
 }
 .first_layer p {
@@ -19,15 +19,14 @@
   display: flex;
   align-self: center;
   margin-left: 35px;
-  
-  font-family: 'Poppins';
+
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 38px;
   /* identical to box height */
   color: #007236;
-  
 }
 .first_layer a {
   width: 50%;
@@ -55,27 +54,26 @@
   width: 98%;
   margin-top: 30px;
   height: 65px;
-  
+
   font-size: 13px;
   font-family: Poppins;
   font-weight: 400;
-
 }
 .second_layer .search-cont {
   width: 100%;
   display: flex;
   flex-direction: row;
-  align-self: center; 
+  align-self: center;
   align-items: center;
 }
-.second_layer .search-cont p{
+.second_layer .search-cont p {
   margin-left: 20px;
   margin-right: 20px;
 }
-.second_layer .search-cont input{
+.second_layer .search-cont input {
   height: 30px;
   border: 1px solid #878787;
-  background: #FFF;
+  background: #fff;
   border-radius: 5px;
 }
 .second_layer .add-cont {
@@ -86,11 +84,11 @@
   justify-content: flex-end;
   margin-right: 40px;
 }
-.second_layer .add-cont .add{
+.second_layer .add-cont .add {
   height: 39px;
   border-radius: 20px;
   border: 1px solid #007236;
-  background: #FFF;
+  background: #fff;
   color: #007236;
   text-decoration: none;
   display: flex;
@@ -100,11 +98,17 @@
   justify-content: center;
   margin-right: 20px;
 }
-.second_layer .add-cont .addBlotter{
+.second_layer .add-cont .add:hover {
+  cursor: pointer;
+  background-color: #007236;
+  color: #fff;
+  transition: 0.2s ease-in-out;
+}
+.second_layer .add-cont .addBlotter {
   height: 39px;
   border-radius: 20px;
   border: 1px solid #007236;
-  background: #FFF;
+  background: #fff;
   color: #007236;
   text-decoration: none;
   display: flex;
@@ -114,11 +118,11 @@
   justify-content: center;
   margin-right: 20px;
 }
-.second_layer .add-cont .addAwareness{
+.second_layer .add-cont .addAwareness {
   height: 39px;
   border-radius: 20px;
   border: 1px solid #007236;
-  background: #FFF;
+  background: #fff;
   color: #007236;
   text-decoration: none;
   display: flex;
@@ -128,11 +132,11 @@
   justify-content: center;
   margin-right: 20px;
 }
-.second_layer .add-cont .addComplain{
+.second_layer .add-cont .addComplain {
   height: 39px;
   border-radius: 20px;
   border: 1px solid #007236;
-  background: #FFF;
+  background: #fff;
   color: #007236;
   text-decoration: none;
   display: flex;
@@ -146,7 +150,7 @@
   height: 39px;
   border-radius: 20px;
   border: 1px solid #007236;
-  background: #FFF;
+  background: #fff;
   color: #007236;
   text-decoration: none;
   display: flex;
@@ -157,17 +161,46 @@
   margin-right: 20px;
 }
 .second_layer .add-cont .exportCVS {
+  margin-right: 20px;
   height: 39px;
   text-decoration: none;
   border-radius: 20px;
-  border: 1px solid #FF0404;
-  color: #FF0404;
-  background: #FFF;
+  border: 1px solid #ff0404;
+  color: #ff0404;
+  background: #fff;
   display: flex;
   align-items: center;
   width: 105px;
   border-radius: 20px;
   justify-content: center;
+}
+.second_layer .add-cont .exportCVS:hover {
+  cursor: pointer;
+  background-color: #ff0404;
+  color: #fff;
+  transition: 0.2s ease-in-out;
+}
+
+.second_layer .add-cont .importBtn {
+  margin-right: 20px;
+  height: 39px;
+  text-decoration: none;
+  border-radius: 20px;
+  border: 1px solid #0077b6;
+  color: #0077b6;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  width: 105px;
+  border-radius: 20px;
+  justify-content: center;
+}
+
+.second_layer .add-cont .importBtn:hover {
+  cursor: pointer;
+  background-color: #0077b6;
+  color: #fff;
+  transition: 0.2s ease-in-out;
 }
 
 .second_layer .option {
@@ -177,14 +210,13 @@
   align-self: center;
   justify-content: flex-end;
   margin-right: 40px;
-
 }
 .second_layer .option .forSelf {
   width: 154.334px;
   height: 37px;
   border-radius: 5px;
   border: 1px solid #007236;
-  background: #FFF;
+  background: #fff;
 
   display: flex;
   align-items: center;
@@ -202,7 +234,7 @@
 }
 
 .second_layer .option .forSelf:hover {
-  color: #FFF;
+  color: #fff;
   background: #007236;
 }
 
@@ -211,7 +243,7 @@
   height: 37px;
   border-radius: 5px;
   border: 1px solid #007236;
-  background: #FFF;
+  background: #fff;
 
   display: flex;
   align-items: center;
@@ -227,16 +259,15 @@
 }
 
 .second_layer .option .forSomeone:hover {
-  color: #FFF;
+  color: #fff;
   background: #007236;
-
 }
 .second_layer .option .Clearance {
   width: 154.334px;
   height: 37px;
   border-radius: 5px;
   border: 1px solid #007236;
-  background: #FFF;
+  background: #fff;
 
   display: flex;
   align-items: center;
@@ -253,7 +284,7 @@
 }
 
 .second_layer .option .Clearance:hover {
-  color: #FFF;
+  color: #fff;
   background: #007236;
 }
 
@@ -262,7 +293,7 @@
   height: 37px;
   border-radius: 5px;
   border: 1px solid #007236;
-  background: #FFF;
+  background: #fff;
 
   display: flex;
   align-items: center;
@@ -278,7 +309,7 @@
 }
 
 .second_layer .option .Closure:hover {
-  color: #FFF;
+  color: #fff;
   background: #007236;
 }
 
@@ -287,7 +318,7 @@
   height: 37px;
   border-radius: 5px;
   border: 1px solid #007236;
-  background: #FFF;
+  background: #fff;
 
   display: flex;
   align-items: center;
@@ -304,16 +335,16 @@
 }
 
 .second_layer .option .forSingleParent:hover {
-  color: #FFF;
+  color: #fff;
   background: #007236;
 }
 
-.second_layer .option .forTheirChild{
+.second_layer .option .forTheirChild {
   width: 154.334px;
   height: 37px;
   border-radius: 5px;
   border: 1px solid #007236;
-  background: #FFF;
+  background: #fff;
 
   display: flex;
   align-items: center;
@@ -329,10 +360,9 @@
 }
 
 .second_layer .option .forTheirChild:hover {
-  color: #FFF;
+  color: #fff;
   background: #007236;
 }
-
 
 .third_layer {
   display: flex;
@@ -343,7 +373,7 @@
 table {
   width: 100%;
   border-collapse: collapse;
-  
+
   margin-top: 25px;
   border-radius: 10px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -356,18 +386,19 @@ table {
   line-height: normal;
 }
 
-
-th, td {
+th,
+td {
   padding: 8px;
   text-align: center;
 }
-
 
 tr:nth-child(even) {
   background-color: #dfdfdf;
 }
 
-.edit, .print, .delete {
+.edit,
+.print,
+.delete {
   margin-right: 10px;
   text-decoration: none;
 }
@@ -376,11 +407,11 @@ tr:nth-child(even) {
   cursor: pointer;
 }
 .print {
-  color: #000AFF;
+  color: #000aff;
   cursor: pointer;
 }
 .delete {
-  color: #F00;
+  color: #f00;
   cursor: pointer;
 }
 .next-button {
@@ -514,7 +545,7 @@ tr:nth-child(even) {
   color: #007236;
 }
 
-.modal-AddUser{
+.modal-AddUser {
   display: flex;
   z-index: 2;
   height: 100vh;
@@ -546,7 +577,7 @@ tr:nth-child(even) {
   display: flex;
   position: relative;
   flex-direction: column;
-  background: #F8F8F8;
+  background: #f8f8f8;
   width: 825px;
   height: 500px;
   padding: 20px;
@@ -557,7 +588,7 @@ tr:nth-child(even) {
   display: flex;
   position: relative;
   flex-direction: column;
-  background: #F8F8F8;
+  background: #f8f8f8;
   width: 825px;
   height: 500px;
   padding: 20px;
@@ -567,7 +598,7 @@ tr:nth-child(even) {
   display: flex;
   position: relative;
   flex-direction: column;
-  background: #F8F8F8;
+  background: #f8f8f8;
   width: 825px;
   height: 400px;
   padding: 20px;
@@ -578,7 +609,7 @@ tr:nth-child(even) {
   display: flex;
   position: relative;
   flex-direction: column;
-  background: #F8F8F8;
+  background: #f8f8f8;
   width: 550px;
   height: 385px;
   padding: 20px;
@@ -589,18 +620,18 @@ tr:nth-child(even) {
   display: flex;
   position: relative;
   flex-direction: column;
-  background: #F8F8F8;
+  background: #f8f8f8;
   width: 550px;
   height: 385px;
   padding: 20px;
   overflow: hidden;
   border-radius: 20px;
 }
-.form2Blotter{
+.form2Blotter {
   display: flex;
   position: relative;
   flex-direction: column;
-  background: #F8F8F8;
+  background: #f8f8f8;
   width: 700px;
   height: 360px;
   padding: 20px;
@@ -611,7 +642,7 @@ tr:nth-child(even) {
   display: flex;
   position: relative;
   flex-direction: column;
-  background: #F8F8F8;
+  background: #f8f8f8;
   width: 325px;
   height: autoz;
   padding: 20px;
@@ -666,7 +697,8 @@ tr:nth-child(even) {
 
   margin-bottom: 20px;
 }
-.pangalawang-layer-user input, select {
+.pangalawang-layer-user input,
+select {
   height: 30px;
 }
 
@@ -686,25 +718,23 @@ tr:nth-child(even) {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
-
 
 .title-cont {
   display: flex;
   flex-direction: row;
 }
-
 
 .title-cont p {
   width: 50%;
@@ -724,7 +754,6 @@ tr:nth-child(even) {
   align-self: center;
   cursor: pointer;
 }
-
 
 .unang-layer {
   display: flex;
@@ -792,7 +821,7 @@ tr:nth-child(even) {
   font-weight: 700;
   line-height: normal;
 }
-.panglima-layerBlotter textarea{
+.panglima-layerBlotter textarea {
   width: 100%;
   height: 80px;
 }
@@ -819,19 +848,23 @@ tr:nth-child(even) {
   flex-direction: column;
   width: 50%;
 }
-.unang-left #fullnameComplain, #timeComplain {
+.unang-left #fullnameComplain,
+#timeComplain {
   width: 100%;
   height: 25px;
 }
-.unang-left #fullnameComplain1, #timeComplain1 {
+.unang-left #fullnameComplain1,
+#timeComplain1 {
   width: 100%;
   height: 25px;
 }
-.unang-left #fullnameAwareness, #timeAwareness {
+.unang-left #fullnameAwareness,
+#timeAwareness {
   width: 100%;
   height: 25px;
 }
-.unang-left #fullnameAwareness1, #timeAwareness1 {
+.unang-left #fullnameAwareness1,
+#timeAwareness1 {
   width: 100%;
   height: 25px;
 }
@@ -842,19 +875,23 @@ tr:nth-child(even) {
   margin-left: 150px;
 }
 
-.unang-right #locationComplain, #dateComplain {
+.unang-right #locationComplain,
+#dateComplain {
   width: 100%;
   height: 25px;
 }
-.unang-right #locationComplain1, #dateComplain1 {
+.unang-right #locationComplain1,
+#dateComplain1 {
   width: 100%;
   height: 25px;
 }
-.unang-right #locationAwareness, #dateAwareness {
+.unang-right #locationAwareness,
+#dateAwareness {
   width: 100%;
   height: 25px;
 }
-.unang-right #locationAwareness1, #dateAwareness1 {
+.unang-right #locationAwareness1,
+#dateAwareness1 {
   width: 100%;
   height: 25px;
 }
@@ -871,16 +908,16 @@ tr:nth-child(even) {
   line-height: normal;
 }
 .pangalawang-layer-to #detailComplain {
-  height: 80px; 
+  height: 80px;
 }
 .pangalawang-layer-to #detailComplain1 {
-  height: 80px; 
+  height: 80px;
 }
 .pangalawang-layer-to #detailAwareness {
-  height: 80px; 
+  height: 80px;
 }
 .pangalawang-layer-to #detailAwareness1 {
-  height: 80px; 
+  height: 80px;
 }
 .pangatlong-layer-to {
   display: flex;
@@ -920,31 +957,38 @@ tr:nth-child(even) {
   line-height: normal;
 }
 
-.form1 #firstname, #middlename, #lastname {
+.form1 #firstname,
+#middlename,
+#lastname {
   width: 160.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
-.form1 #firstname1, #middlename1, #lastname1 {
+.form1 #firstname1,
+#middlename1,
+#lastname1 {
   width: 160.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
-.form2 #complainant, #respondent, #victim, #location {
+.form2 #complainant,
+#respondent,
+#victim,
+#location {
   width: 220.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
-.form2 #details{
+.form2 #details {
   width: 785.007px;
   height: 68.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
@@ -952,46 +996,48 @@ tr:nth-child(even) {
   margin-top: -20px;
 }
 
-.form2 #details_complain{
+.form2 #details_complain {
   width: 785.007px;
   height: 100.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
   margin-bottom: -25px;
-
-  
 }
 .pangatlong-layer .detailstext1 {
   margin-top: 20px;
   padding: 10px;
-
 }
-.form1 #age, #gender {
+.form1 #age,
+#gender {
   width: 120.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
-.form1 #age1, #gender1 {
+.form1 #age1,
+#gender1 {
   width: 120.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
-.form2 #time, #type, #date, #status {
+.form2 #time,
+#type,
+#date,
+#status {
   width: 140.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
 .form2 #statusComplain {
   width: 140.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
@@ -1082,58 +1128,61 @@ tr:nth-child(even) {
 .form1 #house-no {
   width: 65.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
 .form1 #street {
   width: 125.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
-.form1 #subdivision{
+.form1 #subdivision {
   width: 160.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
-.form1 #dob, #place-of-birth, #civil-status {
+.form1 #dob,
+#place-of-birth,
+#civil-status {
   width: 120.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
-
 
 .form1 #house-no1 {
   width: 65.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
 .form1 #street1 {
   width: 125.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
-.form1 #subdivision1{
+.form1 #subdivision1 {
   width: 160.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
-.form1 #dob1, #place-of-birth1, #civil-status1 {
+.form1 #dob1,
+#place-of-birth1,
+#civil-status1 {
   width: 120.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
@@ -1145,7 +1194,7 @@ tr:nth-child(even) {
   margin-top: 20px;
 }
 
-.pangatlong-layer1 { 
+.pangatlong-layer1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -1164,34 +1213,40 @@ tr:nth-child(even) {
   flex-direction: column;
   margin-bottom: 20px;
 }
-.form1 #occupation, #email, #contact-no {
+.form1 #occupation,
+#email,
+#contact-no {
   width: 160.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
 
-.form1 #voter-status, #identified {
+.form1 #voter-status,
+#identified {
   width: 120.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
 
-.form1 #occupation1, #email1, #contact-no1 {
+.form1 #occupation1,
+#email1,
+#contact-no1 {
   width: 160.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
 
-.form1 #voter-status1, #identified1 {
+.form1 #voter-status1,
+#identified1 {
   width: 120.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
@@ -1206,33 +1261,39 @@ tr:nth-child(even) {
   margin-bottom: 20px;
 }
 
-.form1 #sector, #citizenship, #household-no{
+.form1 #sector,
+#citizenship,
+#household-no {
   width: 160.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
-.form1 #out-of-school-youth, #person-with-disability {
+.form1 #out-of-school-youth,
+#person-with-disability {
   display: flex;
   width: 16px;
   height: 16px;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   margin-right: 10px;
 }
 
-.form1 #sector1, #citizenship1, #household-no1{
+.form1 #sector1,
+#citizenship1,
+#household-no1 {
   width: 160.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
-.form1 #out-of-school-youth1, #person-with-disability1 {
+.form1 #out-of-school-youth1,
+#person-with-disability1 {
   display: flex;
   width: 16px;
   height: 16px;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   margin-right: 10px;
 }
 .checkbox-cont {
@@ -1268,7 +1329,7 @@ tr:nth-child(even) {
   margin-top: 20px;
 }
 
-.mother-cont{
+.mother-cont {
   display: flex;
 }
 .mother-cont .input-wrapper {
@@ -1276,22 +1337,27 @@ tr:nth-child(even) {
   flex-direction: column;
   margin-right: 20px;
 }
-.mother-cont .input-wrapper #mother-firstname, #mother-middlename, #mother-lastname, #mother-age {
+.mother-cont .input-wrapper #mother-firstname,
+#mother-middlename,
+#mother-lastname,
+#mother-age {
   width: 160.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
 
-.mother-cont .input-wrapper #mother-firstname1, #mother-middlename1, #mother-lastname1, #mother-age1 {
+.mother-cont .input-wrapper #mother-firstname1,
+#mother-middlename1,
+#mother-lastname1,
+#mother-age1 {
   width: 160.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
-
 
 .address-cont {
   margin-top: -20px;
@@ -1305,21 +1371,21 @@ tr:nth-child(even) {
 .form1 #mother-house-no {
   width: 65.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
 .form1 #mother-street {
   width: 125.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
-.form1 #mother-subdivision{
+.form1 #mother-subdivision {
   width: 160.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
@@ -1327,21 +1393,21 @@ tr:nth-child(even) {
 .form1 #mother-house-no1 {
   width: 65.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
 .form1 #mother-street1 {
   width: 125.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
-.form1 #mother-subdivision1{
+.form1 #mother-subdivision1 {
   width: 160.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
@@ -1353,7 +1419,7 @@ tr:nth-child(even) {
   margin-top: 25px;
   width: 16px;
   height: 16px;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   margin-right: 10px;
   margin-left: 5px;
 }
@@ -1361,7 +1427,7 @@ tr:nth-child(even) {
   margin-top: 25px;
   width: 16px;
   height: 16px;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   margin-right: 10px;
   margin-left: 5px;
 }
@@ -1381,7 +1447,7 @@ tr:nth-child(even) {
   margin-right: 10px;
 }
 
-.father-cont{
+.father-cont {
   display: flex;
 }
 .father-cont .input-wrapper {
@@ -1389,17 +1455,23 @@ tr:nth-child(even) {
   flex-direction: column;
   margin-right: 20px;
 }
-.father-cont .input-wrapper #father-firstname, #father-middlename, #father-lastname, #father-age {
+.father-cont .input-wrapper #father-firstname,
+#father-middlename,
+#father-lastname,
+#father-age {
   width: 160.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
-.father-cont .input-wrapper #father-firstname1, #father-middlename1, #father-lastname1, #father-age1 {
+.father-cont .input-wrapper #father-firstname1,
+#father-middlename1,
+#father-lastname1,
+#father-age1 {
   width: 160.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
@@ -1416,21 +1488,21 @@ tr:nth-child(even) {
 .form1 #father-house-no {
   width: 65.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
 .form1 #father-street {
   width: 125.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
-.form1 #father-subdivision{
+.form1 #father-subdivision {
   width: 160.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
@@ -1438,21 +1510,21 @@ tr:nth-child(even) {
 .form1 #father-house-no1 {
   width: 65.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
 .form1 #father-street1 {
   width: 125.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
-.form1 #father-subdivision1{
+.form1 #father-subdivision1 {
   width: 160.007px;
   height: 28.836px;
-  fill: #FFF;
+  fill: #fff;
   stroke-width: 1px;
   stroke: #999;
 }
@@ -1488,4 +1560,3 @@ tr:nth-child(even) {
   margin-left: 670px;
   margin-top: 20px;
 }
-

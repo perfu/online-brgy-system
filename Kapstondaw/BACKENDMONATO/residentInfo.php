@@ -735,7 +735,7 @@ while($row = $result->fetch_assoc()) {
 <script src="./js/app.js"></script>
 <script>
 
-  // ADD RESIDENTS
+  // ADD RESIDENTSw
   const addLink = document.getElementById('add');
   const modalAdd = document.querySelector('.modal-AddResidents');
   const closeButtonAdd = document.querySelector('.closeBtnAdd');
