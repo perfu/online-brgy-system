@@ -71,6 +71,8 @@
         </div>
       </div>
 
+      <?php include './template/message.php' ?>
+
       <div class="third_layer">
         <table id="table">
           <tr>
@@ -103,7 +105,7 @@
 
     <!-- UPDATE INFO -->
 <div class="modal-b-info">
-    <form class="form-b-info" action="">
+    <form class="form-b-info" action="./model/update_brgy_information.php" method="post" enctype="multipart/form-data">
        <div class="header-cont">
           <p>Update Barangay Information</p>
           <img src="icons/close 1.png"  class="closemo" alt="">

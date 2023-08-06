@@ -17,10 +17,13 @@ while($row = $result->fetch_assoc()) {
   <link rel="stylesheet" href="style3.css ?<?php echo time(); ?>">
   <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
   <link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
+  <link rel="stylesheet" href="../../dist/generateCert.css?<?php echo time(); ?>">
   <script src="sidebar.js"></script>
 
 </head>
 <body>
+
+      <?php include './actives/import_residents.php' ?>
          <!-- HEADER -->
          <div class="container">
             <div class="layer1">Barangay Zone IV Dasmarinas Cavite
@@ -82,6 +85,7 @@ while($row = $result->fetch_assoc()) {
       <div class="add-cont">
         <a href="#" class="add" id="add">+ Resident</a>
         <a href="./model/export_residents_csv.php" class="exportCVS">+ Export CVS</a>
+        <button class="importBtn">+ Import</button>
       </div>
     </div>
 
@@ -728,7 +732,7 @@ while($row = $result->fetch_assoc()) {
 </html>
 
 <script src="./js//jQuery-3.7.0.js"></script>
-<script src="./js//app.js"></script>
+<script src="./js/app.js"></script>
 <script>
 
   // ADD RESIDENTS

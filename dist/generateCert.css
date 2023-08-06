@@ -1,5 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+.import-container {
+  background-color: rgba(0, 0, 0, 0.15);
+  position: absolute;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 10;
+}
+.import-container form {
+  border: 2px solid black;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+}
+.import-container form input[type=file] {
+  margin: 1rem 0;
+}
+.import-container form input[type=submit] {
+  width: 100%;
+  padding: 0.5rem;
+}
+
 .printing-container-endorsement {
   max-width: 2000px;
   height: auto;
@@ -2351,12 +2380,12 @@
 
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 ::-webkit-scrollbar {
   width: 10px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -2397,7 +2426,7 @@ body {
 
 .layer1 {
   z-index: 2;
-  background: linear-gradient(180deg, #057435 49.41%, #F6EB13 211.08%);
+  background: linear-gradient(180deg, #057435 49.41%, #f6eb13 211.08%);
   width: 100%;
   height: 85px;
   display: flex;
@@ -2410,7 +2439,7 @@ body {
   font-size: 20px;
   line-height: 30px;
   /* identical to box height */
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .layer2 {
@@ -2430,7 +2459,7 @@ body {
   flex-direction: row;
   width: 75px;
   height: 100%;
-  background: linear-gradient(180.45deg, #007236 10.56%, #92BA21 43.84%, #62A228 71.84%, #007236 100.06%);
+  background: linear-gradient(180.45deg, #007236 10.56%, #92ba21 43.84%, #62a228 71.84%, #007236 100.06%);
   position: fixed;
   transition: width 0.3s;
 }
