@@ -23,7 +23,6 @@ while($row = $result->fetch_assoc()) {
 </head>
 <body>
 
-      <?php include './actives/import_residents.php' ?>
          <!-- HEADER -->
          <div class="container">
             <div class="layer1">Barangay Zone IV Dasmarinas Cavite
@@ -85,7 +84,6 @@ while($row = $result->fetch_assoc()) {
       <div class="add-cont">
         <a href="#" class="add" id="add">+ Resident</a>
         <a href="./model/export_residents_csv.php" class="exportCVS">+ Export CVS</a>
-        <button class="importBtn">+ Import</button>
       </div>
     </div>
 

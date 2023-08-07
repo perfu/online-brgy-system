@@ -98,12 +98,6 @@
   justify-content: center;
   margin-right: 20px;
 }
-.second_layer .add-cont .add:hover {
-  cursor: pointer;
-  background-color: #007236;
-  color: #fff;
-  transition: 0.2s ease-in-out;
-}
 .second_layer .add-cont .addBlotter {
   height: 39px;
   border-radius: 20px;
@@ -174,34 +168,7 @@
   border-radius: 20px;
   justify-content: center;
 }
-.second_layer .add-cont .exportCVS:hover {
-  cursor: pointer;
-  background-color: #ff0404;
-  color: #fff;
-  transition: 0.2s ease-in-out;
-}
 
-.second_layer .add-cont .importBtn {
-  margin-right: 20px;
-  height: 39px;
-  text-decoration: none;
-  border-radius: 20px;
-  border: 1px solid #0077b6;
-  color: #0077b6;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  width: 105px;
-  border-radius: 20px;
-  justify-content: center;
-}
-
-.second_layer .add-cont .importBtn:hover {
-  cursor: pointer;
-  background-color: #0077b6;
-  color: #fff;
-  transition: 0.2s ease-in-out;
-}
 
 .second_layer .option {
   width: 50%;
