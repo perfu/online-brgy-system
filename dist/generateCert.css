@@ -1,47 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-.import-container {
-  background-color: rgba(0, 0, 0, 0.15);
-  position: absolute;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  z-index: 10;
-}
-.import-container form {
-  background-color: #fff;
-  border: none;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 20%;
-}
-.import-container form .cons {
-  width: 100%;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.import-container form label {
-  font-size: 2rem;
-}
-.import-container form input[type=submit] {
-  width: 100%;
-  padding: 0.5rem;
-  border-top: 2px solid #fff;
-  background-color: #0077b6;
-  border: none;
-  color: #fff;
-}
-
 .printing-container-endorsement {
   max-width: 2000px;
   height: auto;
