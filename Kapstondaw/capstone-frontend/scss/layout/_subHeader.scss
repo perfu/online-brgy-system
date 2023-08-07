@@ -70,7 +70,11 @@
     li {
       color: #fff;
       list-style: none;
-      margin: o;
+      margin: 0;
+
+      a {
+        color: #fff;
+      }
     }
   }
 }
