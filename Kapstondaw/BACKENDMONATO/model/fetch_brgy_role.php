@@ -1,17 +1,15 @@
 <?php 
-    $query = "SELECT * FROM tblbrgy_info";
+    $query = "SELECT * FROM brgy_information";
     $result = $conn->query($query);
 	$row = $result->fetch_assoc();
 
 	if($row){
-		$province = $row['province'];
-		$town	= $row['town'];
-		$brgy 		= $row['brgy_name'];
-		$number =  $row['number'];
-		$city_logo 	= $row['city_logo'];
+		$province_name = $row['province_name'];
+		$brgy_name 		= $row['brgy_name'];
+		$municipality_logo 	= $row['municipality_logo'];
+		$town_name	= $row['town_name'];
+		$tel_no =  $row['tel_no'];
 		$brgy_logo		= $row['brgy_logo'];
-		$db_txt		= $row['text'];
-		$db_img		= $row['image'];
 	}
 
 	$pos_q = "SELECT * FROM tblposition ORDER BY `order` ASC";

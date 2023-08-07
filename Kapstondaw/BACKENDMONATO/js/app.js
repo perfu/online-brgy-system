@@ -187,36 +187,3 @@ function editPassword(that) {
   $("#id").val(id);
   $("#username-user1").val(username);
 }
-
-const importBtn = document.querySelector(".importBtn");
-const importCon = document.querySelector(".import-container");
-
-importBtn.addEventListener("click", (e) => {
-  e.stopPropagation();
-  importCon.style.display = "flex";
-
-  if (importCon.style.display == "flex") {
-    const importMain = document.querySelector("#submitImport");
-
-    const fileVal = document.querySelector("#fileToUpload");
-    const labelVal = document.querySelector("#labelValue");
-
-    fileVal.addEventListener("change", (e) => {
-      if (e.target.value) {
-        labelVal.innerHTML = e.target.value;
-      }
-    });
-
-    importMain.addEventListener("submit", (e) => {
-      e.preventDefault();
-      importCon.style.display = "none";
-    });
-  }
-});
-
-document.addEventListener("click", () => {
-  if ((importCon.style.display = "flex")) {
-    console.log("log");
-    importCon.style.display = "none";
-  }
-});
