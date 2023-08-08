@@ -24,6 +24,7 @@ while($row = $result->fetch_assoc()) {
 <body>
 
     <?php include './model/fetch_brgy_role.php' ?>
+    <?php include './actives/import_residents.php' ?>
 
          <!-- HEADER -->
          <div class="container">
@@ -86,6 +87,7 @@ while($row = $result->fetch_assoc()) {
       <div class="add-cont">
         <a href="#" class="add" id="add">+ Resident</a>
         <a href="./model/export_residents_csv.php" class="exportCVS">+ Export CVS</a>
+        <button class="importBtn">+ Import</button>
       </div>
     </div>
 
