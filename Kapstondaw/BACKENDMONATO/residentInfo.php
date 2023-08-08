@@ -91,12 +91,7 @@ while($row = $result->fetch_assoc()) {
       </div>
     </div>
 
-    <?php if(isset($_SESSION['message'])): ?>
-    <div class="alert alert-<?php echo $_SESSION['success']; ?> <?= $_SESSION['success']=='danger' ? 'bg-danger text-light' : null ?>" role="alert">
-        <?php echo $_SESSION['message']; ?>
-    </div>
-    <?php unset($_SESSION['message']); ?>
-    <?php endif ?>
+    <?php include './template/message.php' ?>
 
     <div class="third_layer">
       <table id="table">
@@ -734,7 +729,7 @@ while($row = $result->fetch_assoc()) {
 </html>
 
 <script src="./js//jQuery-3.7.0.js"></script>
-<script src="./js//app.js"></script>
+<script src="./js/app.js"></script>
 <script>
 
   // ADD RESIDENTSw
