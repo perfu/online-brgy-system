@@ -169,6 +169,20 @@
   justify-content: center;
 }
 
+.second_layer .add-cont .importBtn {
+  margin-right: 20px;
+  height: 39px;
+  text-decoration: none;
+  border-radius: 20px;
+  border: 1px solid #ff0404;
+  color: #ff0404;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  width: 105px;
+  border-radius: 20px;
+  justify-content: center;
+}
 
 .second_layer .option {
   width: 50%;
