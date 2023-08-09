@@ -30,6 +30,50 @@
 
     $query8 = "SELECT * FROM tblresidents WHERE age>=60";
 	$snr = $conn->query($query8)->num_rows;
+
+  if(isset($_GET['state'])) {
+    $state = $_GET['state'];
+    
+    if($state=='male'){
+        $query = "SELECT * FROM tblresidents WHERE gender='Male'";
+        $result2 = $conn->query($query);
+    }elseif($state=='female'){
+        $query = "SELECT * FROM tblresidents WHERE gender='Female'";
+        $result2 = $conn->query($query);
+    }elseif($state=='osy'){
+        $query = "SELECT * FROM tblresidents WHERE osy='OSY'";
+        $result2 = $conn->query($query);
+    }elseif($state=='pwd'){
+        $query = "SELECT * FROM tblresidents WHERE pwd='PWD'";
+        $result2 = $conn->query($query);
+    }elseif($state=='snr'){
+        $query = "SELECT * FROM tblresidents WHERE sector='Senior Citizen'";
+        $result2 = $conn->query($query);
+    }elseif($state=='students'){
+        $query = "SELECT * FROM tblresidents WHERE pwd='Student'";
+        $result2 = $conn->query($query);
+    }elseif($state=='blotters'){
+        $query = "SELECT * FROM tblblotter";
+        $result2 = $conn->query($query);
+    }elseif($state=='non_voters'){
+        $query = "SELECT * FROM tblresidents WHERE `voter-status`='non-voter'";
+        $result2 = $conn->query($query);
+    }elseif($state=='voters'){
+        $query = "SELECT * FROM tblresidents WHERE `voter-status`='voter'";
+        $result2 = $conn->query($query);
+       
+    }else{
+        $query = "SELECT * FROM tblresidents";
+        $result2 = $conn->query($query);
+    }
+
+	
+    $resident = array();
+	while($row = $result2->fetch_assoc()){
+		$resident[] = $row; 
+	}
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
