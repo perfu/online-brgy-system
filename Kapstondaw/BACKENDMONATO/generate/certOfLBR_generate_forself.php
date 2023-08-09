@@ -218,7 +218,12 @@
                         border: none;
                         border-bottom: 1px solid black;
                         width: 200px;">, who was born on
-                        <input type="text" id="dob" value="<?php echo $certOfLBR['date-of-birth'] ?>" placeholder="DATE OF BIRTH" style="color: #000;
+                        <input type="text" id="dob" value="
+                        <?php 
+                        $date = new DateTime($certOfLBR['date-of-birth']);
+                        echo $date->format('F d, Y'); 
+                        ?>
+                        " placeholder="DATE OF BIRTH" style="color: #000;
                         font-family: Caladea;
                         font-size: 19px;
                         font-style: normal;

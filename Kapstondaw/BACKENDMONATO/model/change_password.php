@@ -18,6 +18,8 @@ if (!empty($username)) {
         $result = $stmt->get_result();
         $user = $result->fetch_assoc();
 
+        echo $user;
+
         if ($user && password_verify($current_password, $user['password'])) {
             // Hash the new password using bcrypt
             $hashed_password = password_hash($new_password, PASSWORD_BCRYPT);
