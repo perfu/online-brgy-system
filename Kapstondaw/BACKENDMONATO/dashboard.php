@@ -30,6 +30,9 @@
 
     $query8 = "SELECT * FROM tblresidents WHERE age>=60";
 	$snr = $conn->query($query8)->num_rows;
+
+      $query9 = "SELECT * FROM tblresidents WHERE sector='Student'";
+	$students = $conn->query($query9)->num_rows;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -290,7 +293,7 @@
             <div class="a1">
               <div class="b1">
                 <div class="c1">STUDENTS</div>
-                <div class="c2-st">969</div>
+                <div class="c2-st"><?= number_format($students) ?></div>
                 <div class="c3">Total STUDENTS</div>
               </div>
               <div class="b2">
