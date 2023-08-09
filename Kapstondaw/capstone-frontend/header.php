@@ -11,7 +11,7 @@
         <li><a href="#announcement">Announcement</a></li>
         <li>Contact us!</li>
         <?php if(isset($_SESSION['username'])) { ?>
-          <?php echo $_SESSION['username'];?>
+            <li><?php echo $_SESSION['username'];?></li>
             <li><a href="../BACKENDMONATO/model/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></li>
           <?php } else {?>
             <li class="login" id="login">Login</li>
@@ -36,6 +36,11 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#announcement">Announcement</a></li>
         <li>Contact us!</li>
-        <li class="login" id="login">Login</li>
+        <?php if(isset($_SESSION['username'])) { ?>
+          <li><?php echo $_SESSION['username'];?></li>
+            <li><a href="../BACKENDMONATO/model/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></li>
+          <?php } else {?>
+            <li class="login" id="login">Login</li>
+        <?php } ?>
       </ul>
     </div>

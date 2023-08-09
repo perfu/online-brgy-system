@@ -208,15 +208,16 @@ importBtn.addEventListener("click", (e) => {
     });
 
     importMain.addEventListener("submit", (e) => {
-      e.preventDefault();
       importCon.style.display = "none";
     });
   }
 });
 
-document.addEventListener("click", () => {
-  if ((importCon.style.display = "flex")) {
-    console.log("log");
+document.addEventListener("click", function (event) {
+  const importForm = document.querySelector(".import");
+  let isClickInside = importForm.contains(event.target);
+  console.log(isClickInside);
+  if (!isClickInside) {
     importCon.style.display = "none";
   }
 });

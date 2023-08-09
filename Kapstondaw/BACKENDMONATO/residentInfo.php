@@ -23,6 +23,9 @@ while($row = $result->fetch_assoc()) {
 </head>
 <body>
 
+    <?php include './model/fetch_brgy_role.php' ?>
+    <?php include './actives/import_residents.php' ?>
+
          <!-- HEADER -->
          <div class="container">
             <div class="layer1">Barangay Zone IV Dasmarinas Cavite
@@ -84,15 +87,11 @@ while($row = $result->fetch_assoc()) {
       <div class="add-cont">
         <a href="#" class="add" id="add">+ Resident</a>
         <a href="./model/export_residents_csv.php" class="exportCVS">+ Export CVS</a>
+        <button class="importBtn">+ Import</button>
       </div>
     </div>
 
-    <?php if(isset($_SESSION['message'])): ?>
-    <div class="alert alert-<?php echo $_SESSION['success']; ?> <?= $_SESSION['success']=='danger' ? 'bg-danger text-light' : null ?>" role="alert">
-        <?php echo $_SESSION['message']; ?>
-    </div>
-    <?php unset($_SESSION['message']); ?>
-    <?php endif ?>
+    <?php include './template/message.php' ?>
 
     <div class="third_layer">
       <table id="table">
@@ -691,7 +690,7 @@ while($row = $result->fetch_assoc()) {
 
 <!-- UPDATE INFO -->
 <div class="modal-b-info">
-    <form class="form-b-info" action="">
+    <form class="form-b-info" action="./model/update_brgy_information.php" enctype="multipart/form-data" method="post">
        <div class="header-cont">
           <p>Update Barangay Information</p>
           <img src="icons/close 1.png"  class="closemo" alt="">
@@ -700,26 +699,26 @@ while($row = $result->fetch_assoc()) {
        <div class="input-cont">
         <div class="left-cont">
           <label for="province_name">Province Name:</label>
-          <input type="text" name="province_name" id="province_name">
+          <input type="text" name="province_name" id="province_name" value="<?=$province_name ?>">
 
           <label for="b_name">Barangay Name:</label>
-          <input type="text" name="b_name" id="b_name">
+          <input type="text" name="b_name" id="b_name" value="<?= $brgy_name ?>">
           
           <label for="municipality_logo">Municipality Logo:</label>
-          <img id="preview" alt="Preview">
-          <input type="file" name="municipality_logo">
+          <img src="uploads/<?= $municipality_logo ?>" id="preview" alt="<?= $municipality_logo ?>">
+          <input type="file" name="municipality_logo" >
         </div>
         
         <div class="right-cont">
           <label for="town_name">Town Name:</label>
-          <input type="text" name="town_name" id="town_name">
+          <input type="text" name="town_name" id="town_name" value="<?= $town_name ?>">
       
           <label for="tel_no">Tel No.:</label>
-          <input type="text" name="tel_no" id="tel_no">
+          <input type="text" name="tel_no" id="tel_no" value="<?= $tel_no ?>">
           
           <label for="barangay_logo">Barangay Logo:</label>
-          <img id="preview" alt="Preview">
-          <input type="file" name="barangay_logo" id="barangay_logo" >
+          <img src="uploads/<?= $brgy_logo ?>" id="preview" alt="<?= $brgy_logo ?>">
+          <input type="file" name="barangay_logo" id="barangay_logo">
         </div>
        </div>
        <input class="UpdateInfo" type="submit" value="Update">

@@ -30,9 +30,6 @@
 
     $query8 = "SELECT * FROM tblresidents WHERE age>=60";
 	$snr = $conn->query($query8)->num_rows;
-
-      $query9 = "SELECT * FROM tblresidents WHERE sector='Student'";
-	$students = $conn->query($query9)->num_rows;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -123,7 +120,7 @@
               </div>
             </div> 
             <div class="a2-p" id="more-allresidents">
-              <a href="#" class="b3">More info</a>
+              <a href="?state=population" class="b3">More info</a>
               <div class="b4">
                 <img src="icons/down-arrow.png" alt="">
               </div>
@@ -143,7 +140,7 @@
               </div>
             </div>
             <div class="a2-m" id="more-male">
-              <div class="b3">More info</div>
+              <a href="?state=male" class="b3">More info</a>
               <div class="b4">
                 <img src="icons/down-arrow.png" alt="">
               </div>
@@ -163,7 +160,7 @@
               </div>
             </div>
             <div class="a2-f"  id="more-female">
-              <div class="b3">More info</div>
+              <a href="?state=female" class="b3">More info</a>
               <div class="b4">
                 <img src="icons/down-arrow.png" alt="">
               </div>
@@ -183,7 +180,7 @@
               </div>
             </div>
             <div class="a2-v"  id="more-voters">
-              <div class="b3">More info</div>
+              <a href="?state=voters" class="b3">More info</a>
               <div class="b4">
                 <img src="icons/down-arrow.png" alt="">
               </div>
@@ -203,7 +200,7 @@
               </div>
             </div>
             <div class="a2-n"  id="more-nonvoters">
-              <div class="b3">More info</div>
+              <a href="?state=non_voters" class="b3">More info</a>
               <div class="b4">
                 <img src="icons/down-arrow.png" alt="">
               </div>
@@ -223,7 +220,7 @@
               </div>
             </div>
             <div class="a2-b"  id="more-blotters">
-              <div class="b3">More info</div>
+              <a href="?state=blotters" class="b3">More info</a>
               <div class="b4">
                 <img src="icons/down-arrow.png" alt="">
               </div>
@@ -243,6 +240,7 @@
               </div>
             </div>
             <div class="a2-o"  id="more-osy">
+              <a href="?state=pwd" class="b3">More info</a>
               <div class="b3">More info</div>
               <div class="b4">
                 <img src="icons/down-arrow.png" alt="">
@@ -263,7 +261,7 @@
               </div>
             </div>
             <div class="a2-pw"  id="more-pwd">
-              <div class="b3">More info</div>
+              <a href="?state=pwd" class="b3">More info</a>
               <div class="b4">
                 <img src="icons/down-arrow.png" alt="">
               </div>
@@ -283,7 +281,7 @@
               </div>
             </div>
             <div class="a2-sn"  id="more-snr">
-              <div class="b3">More info</div>
+              <a href="?state=snr" class="b3">More info</a>
               <div class="b4">
                 <img src="icons/down-arrow.png" alt="">
               </div>
@@ -303,7 +301,7 @@
               </div>
             </div>
             <div class="a2-st"  id="more-students">
-              <div class="b3">More info</div>
+              <a href="?state=students" class="b3">More info</a>
               <div class="b4">
                 <img src="icons/down-arrow.png" alt="">
               </div>
@@ -443,7 +441,7 @@
   <!-- MORE INFO CLICKED -->
 
   <!-- ALL RESIDENTS -->
-  <div class="modal-allResidents">
+  <div class="modal-allResidents" id="modal-allResidents">
     <div class="form-container">
       <div class="cross-cont">
         <img src="icons/close 1.png"  class="closeAllResidents" alt="">
@@ -521,13 +519,17 @@
                 </tr>
               </thead>
               <tbody>
+                <?php if(!empty($resident)) { ?>
+                  <?php $no=1; foreach($resident as $row): ?>
                   <tr>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td> 
+                    <td><?= $row['firstname'] ?> <?= $row['middlename'] ?> <?= $row['lastname'] ?></td>
+                    <td><?= $row['house-no'] ?> <?= $row['street'] ?> <?= $row['subdivision'] ?></td>
+                    <td><?= $row['place-of-birth'] ?></td>
+                    <td><?= $row['date-of-birth'] ?></td>
+                    <td><?= $row['age'] ?></td>
                   </tr>
+                    <?php $no++; endforeach ?>
+                  <?php } ?>
               </tbody>
             </table>
           </div>
@@ -537,7 +539,7 @@
   </div>
 
     <!-- MALE -->
-    <div class="modal-male">
+    <div class="modal-male" id="modal-male">
     <div class="form-container">
       <div class="cross-cont">
         <img src="icons/close 1.png"  class="closeMale" alt="">
@@ -615,13 +617,17 @@
                 </tr>
               </thead>
               <tbody>
+                <?php if(!empty($resident)) { ?>
+                  <?php $no=1; foreach($resident as $row): ?>
                   <tr>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td> 
+                    <td><?= $row['firstname'] ?> <?= $row['middlename'] ?> <?= $row['lastname'] ?></td>
+                    <td><?= $row['house-no'] ?> <?= $row['street'] ?> <?= $row['subdivision'] ?></td>
+                    <td><?= $row['place-of-birth'] ?></td>
+                    <td><?= $row['date-of-birth'] ?></td>
+                    <td><?= $row['age'] ?></td>
                   </tr>
+                    <?php $no++; endforeach ?>
+                  <?php } ?>
               </tbody>
             </table>
           </div>
@@ -631,7 +637,7 @@
   </div>
 
   <!-- FEMALE -->
-  <div class="modal-female">
+  <div class="modal-female" id="modal-female">
     <div class="form-container">
       <div class="cross-cont">
         <img src="icons/close 1.png"  class="closeFemale" alt="">
@@ -709,13 +715,17 @@
                 </tr>
               </thead>
               <tbody>
+                <?php if(!empty($resident)) { ?>
+                  <?php $no=1; foreach($resident as $row): ?>
                   <tr>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td> 
+                    <td><?= $row['firstname'] ?> <?= $row['middlename'] ?> <?= $row['lastname'] ?></td>
+                    <td><?= $row['house-no'] ?> <?= $row['street'] ?> <?= $row['subdivision'] ?></td>
+                    <td><?= $row['place-of-birth'] ?></td>
+                    <td><?= $row['date-of-birth'] ?></td>
+                    <td><?= $row['age'] ?></td>
                   </tr>
+                    <?php $no++; endforeach ?>
+                  <?php } ?>
               </tbody>
             </table>
           </div>
@@ -725,7 +735,7 @@
   </div>
 
   <!-- VOTERS -->
-  <div class="modal-voters">
+  <div class="modal-voters" id="modal-voters">
     <div class="form-container">
       <div class="cross-cont">
         <img src="icons/close 1.png"  class="closeVoters" alt="">
@@ -780,13 +790,17 @@
                 </tr>
               </thead>
               <tbody>
+                <?php if(!empty($resident)) { ?>
+                  <?php $no=1; foreach($resident as $row): ?>
                   <tr>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td> 
+                    <td><?= $row['firstname'] ?> <?= $row['middlename'] ?> <?= $row['lastname'] ?></td>
+                    <td><?= $row['house-no'] ?> <?= $row['street'] ?> <?= $row['subdivision'] ?></td>
+                    <td><?= $row['place-of-birth'] ?></td>
+                    <td><?= $row['date-of-birth'] ?></td>
+                    <td><?= $row['age'] ?></td>
                   </tr>
+                    <?php $no++; endforeach ?>
+                  <?php } ?>
               </tbody>
             </table>
           </div>
@@ -796,7 +810,7 @@
   </div>
 
   <!-- NON VOTERS -->
-  <div class="modal-nonvoters">
+  <div class="modal-nonvoters" id="modal-nonvoters">
     <div class="form-container">
       <div class="cross-cont">
         <img src="icons/close 1.png"  class="closeNonvoters" alt="">
@@ -834,13 +848,17 @@
                 </tr>
               </thead>
               <tbody>
+                <?php if(!empty($resident)) { ?>
+                  <?php $no=1; foreach($resident as $row): ?>
                   <tr>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td> 
+                    <td><?= $row['firstname'] ?> <?= $row['middlename'] ?> <?= $row['lastname'] ?></td>
+                    <td><?= $row['house-no'] ?> <?= $row['street'] ?> <?= $row['subdivision'] ?></td>
+                    <td><?= $row['place-of-birth'] ?></td>
+                    <td><?= $row['date-of-birth'] ?></td>
+                    <td><?= $row['age'] ?></td>
                   </tr>
+                    <?php $no++; endforeach ?>
+                  <?php } ?>
               </tbody>
             </table>
           </div>
@@ -850,7 +868,7 @@
   </div>
 
   <!-- OSY -->
-  <div class="modal-osy">
+  <div class="modal-osy" id="modal-osy">
     <div class="form-container">
       <div class="cross-cont">
         <img src="icons/close 1.png"  class="closeOsy" alt="">
@@ -888,13 +906,17 @@
                 </tr>
               </thead>
               <tbody>
+                <?php if(!empty($resident)) { ?>
+                  <?php $no=1; foreach($resident as $row): ?>
                   <tr>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td> 
+                    <td><?= $row['firstname'] ?> <?= $row['middlename'] ?> <?= $row['lastname'] ?></td>
+                    <td><?= $row['house-no'] ?> <?= $row['street'] ?> <?= $row['subdivision'] ?></td>
+                    <td><?= $row['place-of-birth'] ?></td>
+                    <td><?= $row['date-of-birth'] ?></td>
+                    <td><?= $row['age'] ?></td>
                   </tr>
+                    <?php $no++; endforeach ?>
+                  <?php } ?>
               </tbody>
             </table>
           </div>
@@ -904,7 +926,7 @@
   </div>
 
   <!-- PWD -->
-  <div class="modal-pwd">
+  <div class="modal-pwd" id="modal-pwd">
     <div class="form-container">
       <div class="cross-cont">
         <img src="icons/close 1.png"  class="closePwd" alt="">
@@ -942,13 +964,17 @@
                 </tr>
               </thead>
               <tbody>
+                   <?php if(!empty($resident)) { ?>
+                  <?php $no=1; foreach($resident as $row): ?>
                   <tr>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td> 
+                    <td><?= $row['firstname'] ?> <?= $row['middlename'] ?> <?= $row['lastname'] ?></td>
+                    <td><?= $row['house-no'] ?> <?= $row['street'] ?> <?= $row['subdivision'] ?></td>
+                    <td><?= $row['place-of-birth'] ?></td>
+                    <td><?= $row['date-of-birth'] ?></td>
+                    <td><?= $row['age'] ?></td>
                   </tr>
+                    <?php $no++; endforeach ?>
+                  <?php } ?>
               </tbody>
             </table>
           </div>
@@ -959,7 +985,7 @@
 
 
   <!-- SENIOR -->
-  <div class="modal-snr">
+  <div class="modal-snr" id="modal-snr">
     <div class="form-container">
       <div class="cross-cont">
         <img src="icons/close 1.png"  class="closeSnr" alt="">
@@ -997,13 +1023,17 @@
                 </tr>
               </thead>
               <tbody>
+                <?php if(!empty($resident)) { ?>
+                  <?php $no=1; foreach($resident as $row): ?>
                   <tr>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td> 
+                    <td><?= $row['firstname'] ?> <?= $row['middlename'] ?> <?= $row['lastname'] ?></td>
+                    <td><?= $row['house-no'] ?> <?= $row['street'] ?> <?= $row['subdivision'] ?></td>
+                    <td><?= $row['place-of-birth'] ?></td>
+                    <td><?= $row['date-of-birth'] ?></td>
+                    <td><?= $row['age'] ?></td>
                   </tr>
+                    <?php $no++; endforeach ?>
+                  <?php } ?>
               </tbody>
             </table>
           </div>
@@ -1014,7 +1044,7 @@
 
 
   <!-- STUDENTS -->
-  <div class="modal-students">
+  <div class="modal-students" id="modal-students">
     <div class="form-container">
       <div class="cross-cont">
         <img src="icons/close 1.png"  class="closeStudents" alt="">
@@ -1052,13 +1082,17 @@
                 </tr>
               </thead>
               <tbody>
+                <?php if(!empty($resident)) { ?>
+                  <?php $no=1; foreach($resident as $row): ?>
                   <tr>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td>
-                    <td>Rodwin Homeres</td> 
+                    <td><?= $row['firstname'] ?> <?= $row['middlename'] ?> <?= $row['lastname'] ?></td>
+                    <td><?= $row['house-no'] ?> <?= $row['street'] ?> <?= $row['subdivision'] ?></td>
+                    <td><?= $row['place-of-birth'] ?></td>
+                    <td><?= $row['date-of-birth'] ?></td>
+                    <td><?= $row['age'] ?></td>
                   </tr>
+                    <?php $no++; endforeach ?>
+                  <?php } ?>
               </tbody>
             </table>
           </div>

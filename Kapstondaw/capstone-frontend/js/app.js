@@ -11,16 +11,18 @@ closeMenuEl.addEventListener("click", () => {
   activeMenuEl.classList.remove("show");
 });
 
-const loginEl = document.querySelector(".login");
+const loginEl = document.querySelectorAll(".login");
 const activeLogin = document.querySelector(".active-login");
 const closeLoginEl = document.querySelector(".active-login-close");
 
-loginEl.addEventListener("click", () => {
-  console.log("log");
-  activeLogin.style.display = "block";
+loginEl.forEach((login) => {
+  login.addEventListener("click", () => {
+    console.log("log");
+    activeLogin.style.display = "block";
 
-  closeLoginEl.addEventListener("click", () => {
-    activeLogin.style.display = "none";
+    closeLoginEl.addEventListener("click", () => {
+      activeLogin.style.display = "none";
+    });
   });
 });
 
