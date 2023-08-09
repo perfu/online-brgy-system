@@ -729,7 +729,7 @@ while($row = $result->fetch_assoc()) {
 </html>
 
 <script src="./js//jQuery-3.7.0.js"></script>
-<script src="./js/app.js"></script>
+<script src="./js//app.js"></script>
 <script>
 
   // ADD RESIDENTSw

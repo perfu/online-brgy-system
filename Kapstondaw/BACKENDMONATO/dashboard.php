@@ -131,7 +131,7 @@
       <a class="cm" href="#">Content Management</a>
         <a href="#" class="b-information" id="b-info">Barangay Information</a>
         <a href="announcement.php" class="announcement">Announcement</a>
-        <a href="backup" class="backup">Backup</a>
+        <a href="./backup/backup.php" class="backup">Backup</a>
         <a href="restore" class="restore">Restore</a>
         <a href="request.php" class="request">Requested Documents</a>
     </div>

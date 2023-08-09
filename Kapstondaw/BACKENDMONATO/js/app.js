@@ -217,6 +217,7 @@ document.addEventListener("click", function (event) {
   const importForm = document.querySelector(".import");
   let isClickInside = importForm.contains(event.target);
   console.log(isClickInside);
+  console.log(isClickInside);
   if (!isClickInside) {
     importCon.style.display = "none";
   }
