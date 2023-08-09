@@ -25,6 +25,7 @@ while($row = $result->fetch_assoc()) {
 
     <?php include './model/fetch_brgy_role.php' ?>
     <?php include './actives/import_residents.php' ?>
+    <?php include './actives/active_restore.php' ?>
 
          <!-- HEADER -->
          <div class="container">
@@ -69,7 +70,7 @@ while($row = $result->fetch_assoc()) {
             <a href="#" class="b-information" id="b-info">Barangay Information</a>
             <a href="announcement.php" class="announcement">Announcement</a>
             <a href="backup" class="backup">Backup</a>
-            <a href="restore" class="restore">Restore</a>
+            <a href="#" class="restore restoreBtn">Restore</a>
             <a href="request.php" class="request">Requested Documents</a>
         </div>
     </div>
@@ -368,7 +369,7 @@ while($row = $result->fetch_assoc()) {
   
   <div class="input-wrapper">
   <div class="checkbox-household">
-    <input type="checkbox" id="mother-household-head1" name="household-head">
+    <input type="checkbox" id="mother-household-head1" value="household-head" name="mhousehold-head">
     <label for="household-head">Household Head</label>
   </div>
   </div>
@@ -413,7 +414,7 @@ while($row = $result->fetch_assoc()) {
   
   <div class="input-wrapper">
   <div class="checkbox-household1">
-    <input type="checkbox" id="father-household-head1" name="household-head">
+    <input type="checkbox" id="father-household-head1" value="household-head" name="fhousehold-head">
     <label for="household-head1">Household Head</label>
   </div>
   </div>

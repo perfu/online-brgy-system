@@ -17,8 +17,10 @@ if (! empty($_FILES)) {
         
     } else {
         if (is_uploaded_file($_FILES["backup_file"]["tmp_name"])) {
-            move_uploaded_file($_FILES["backup_file"]["tmp_name"], $_FILES["backup_file"]["name"]);
-            $response = restoreMysqlDB($_FILES["backup_file"]["name"], $conn);
+            $destinationPath = "../backup/" . $_FILES["backup_file"]["name"];
+            move_uploaded_file($_FILES["backup_file"]["tmp_name"], $destinationPath);
+            $response = restoreMysqlDB($destinationPath, $conn);
+
             
             if($response){
                 $_SESSION['message'] = 'Database restored successfully.';

@@ -28,8 +28,11 @@
   $query7 = "SELECT * FROM tblresidents WHERE pwd='PWD'";
 	$pwd = $conn->query($query7)->num_rows;
 
-    $query8 = "SELECT * FROM tblresidents WHERE age>=60";
+  $query8 = "SELECT * FROM tblresidents WHERE age>=60";
 	$snr = $conn->query($query8)->num_rows;
+
+  $query9 = "SELECT * FROM tblresidents WHERE sector='Student'";
+	$students = $conn->query($query9)->num_rows;
 
   if(isset($_GET['state'])) {
     $state = $_GET['state'];
@@ -335,7 +338,7 @@
             <div class="a1">
               <div class="b1">
                 <div class="c1">STUDENTS</div>
-                <div class="c2-st">969</div>
+                <div class="c2-st"><?= number_format($students) ?></div>
                 <div class="c3">Total STUDENTS</div>
               </div>
               <div class="b2">

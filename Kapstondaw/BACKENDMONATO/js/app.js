@@ -216,9 +216,41 @@ importBtn.addEventListener("click", (e) => {
 document.addEventListener("click", function (event) {
   const importForm = document.querySelector(".import");
   let isClickInside = importForm.contains(event.target);
-  console.log(isClickInside);
-  console.log(isClickInside);
   if (!isClickInside) {
     importCon.style.display = "none";
   }
+});
+
+const restoreBtn = document.querySelector(".restoreBtn");
+const restoreCon = document.querySelector(".restore-container");
+
+restoreBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  restoreCon.style.display = "flex";
+
+  if (restoreCon.style.display == "flex") {
+    const restoreMain = document.querySelector("#submitRestore");
+
+    const fileRestore = document.querySelector("#fileToRestore");
+    const restoreVal = document.querySelector("#restoreLabel");
+
+    fileRestore.addEventListener("change", (e) => {
+      if (e.target.value) {
+        restoreVal.innerHTML = e.target.value;
+      }
+    });
+
+    restoreMain.addEventListener("submit", (e) => {
+      restoreCon.style.display = "none";
+    });
+  }
+
+  document.addEventListener("click", function (event) {
+    const restoreForm = document.querySelector(".restoreForm");
+    let isRestoreForm = restoreForm.contains(event.target);
+    console.log("l2");
+    if (!isRestoreForm) {
+      restoreCon.style.display = "none";
+    }
+  });
 });

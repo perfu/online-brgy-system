@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-.import-container {
+.import-container,
+.restore-container {
   background-color: rgba(0, 0, 0, 0.15);
   position: absolute;
   display: none;
@@ -13,7 +14,8 @@
   width: 100%;
   z-index: 10;
 }
-.import-container form {
+.import-container form,
+.restore-container form {
   border: none;
   overflow: hidden;
   display: flex;
@@ -21,13 +23,15 @@
   justify-content: center;
   width: 40%;
 }
-.import-container form .cons {
+.import-container form .cons,
+.restore-container form .cons {
   width: auto;
   background-color: #fff;
   padding: 1rem;
   border-radius: 0.5rem 0 0 0.5rem;
 }
-.import-container form input[type=submit] {
+.import-container form input[type=submit],
+.restore-container form input[type=submit] {
   padding: 1.1rem;
   border-top: 2px solid #fff;
   background-color: #03045e;

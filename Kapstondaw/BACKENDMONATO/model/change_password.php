@@ -9,6 +9,7 @@ $new_password = $_POST['new_password'];
 $confirm_password = $_POST['confirm_password'];
 
 if (!empty($username)) {
+    $_SESSION['message'] = $current_password;
     if ($new_password === $confirm_password) {
         // Verify the current password against the one stored in the database
         $stmt = $conn->prepare("SELECT password FROM tbl_users WHERE username = ?");
@@ -32,7 +33,7 @@ if (!empty($username)) {
                 $_SESSION['success'] = 'danger';
             }
         } else {
-            $_SESSION['message'] = 'Current Password is incorrect!';
+            $_SESSION['message'] = 'Current Password is incorrect!'. $user['password'];
             $_SESSION['success'] = 'danger';
         }
     } else {

@@ -51,7 +51,7 @@
 	// change profile2 name
 
 	  // image file directory
-	$check = "SELECT id FROM tblresidents WHERE `firstname`='$fname'";
+	$check = "SELECT id FROM tblresidents WHERE `firstname`='$fname' AND `middlename`='$mname' AND `lastname`='$lname'";
 	$nat = $conn->query($check)->num_rows;	
 
 	if($nat == 0){
