@@ -16,7 +16,8 @@ if ($username === '' || $password === '' || $userType === '') {
     setMessageAndRedirect('Please fill up the form completely!', 'danger', '../users.php');
 }
 
-$password = sha1($conn->real_escape_string($password));
+// Hash the password using bcrypt
+$passwordHashed = password_hash($password, PASSWORD_DEFAULT);
 
 $query = $conn->prepare("SELECT * FROM tbl_users WHERE username = ?");
 $query->bind_param("s", $username);
@@ -29,7 +30,7 @@ if ($result->num_rows > 0) {
 }
 
 $insert = $conn->prepare("INSERT INTO tbl_users (username, password, role) VALUES (?, ?, ?)");
-$insert->bind_param("sss", $username, $password, $userType);
+$insert->bind_param("sss", $username, $passwordHashed, $userType);
 
 if ($insert->execute()) {
     setMessageAndRedirect('User added!', 'success', '../users.php');
