@@ -12,6 +12,15 @@ $username = trim($_POST['username'] ?? '');
 $password = trim($_POST['password'] ?? '');
 $userType = trim($_POST['usertype-user'] ?? '');
 
+$fullname = trim($_POST['res_name'] ?? '');
+$age = trim($_POST['res_age'] ?? '');
+$gender = trim($_POST['res_gender'] ?? '');
+$cstatus = trim($_POST['res_cstatus'] ?? '');
+$street = trim($_POST['res_street'] ?? '');
+$dbirth = trim($_POST['res_dbirth'] ?? '');
+$email = trim($_POST['res_email'] ?? '');
+
+
 if ($username === '' || $password === '' || $userType === '') {
     setMessageAndRedirect('Please fill up the form completely!', 'danger', '../users.php');
 }
@@ -29,8 +38,8 @@ if ($result->num_rows > 0) {
     setMessageAndRedirect('Please enter a unique username!', 'danger', '../users.php');
 }
 
-$insert = $conn->prepare("INSERT INTO tbl_users (username, password, role) VALUES (?, ?, ?)");
-$insert->bind_param("sss", $username, $passwordHashed, $userType);
+$insert = $conn->prepare("INSERT INTO tbl_users (username, password, role, fullname, age, gender, civil_status, street, date_of_birth, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$insert->bind_param("ssssssssss", $username, $passwordHashed, $userType, $fullname, $age, $gender, $cstatus, $street, $dbirth, $email);
 
 if ($insert->execute()) {
     setMessageAndRedirect('User added!', 'success', '../users.php');

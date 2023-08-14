@@ -7,6 +7,7 @@ $username = $_POST['username'];
 $current_password = $_POST['current_password'];
 $new_password = $_POST['new_password'];
 $confirm_password = $_POST['confirm_password'];
+$userType = $_POST['usertype-user'];
 
 if (!empty($username)) {
     $_SESSION['message'] = $current_password;
@@ -25,8 +26,8 @@ if (!empty($username)) {
             $hashed_password = password_hash($new_password, PASSWORD_BCRYPT);
 
             // Update the password in the database
-            $update_stmt = $conn->prepare("UPDATE tbl_users SET password = ? WHERE username = ?");
-            $update_stmt->bind_param("ss", $hashed_password, $username);
+            $update_stmt = $conn->prepare("UPDATE tbl_users SET password = ? AND role = ? WHERE username = ?");
+            $update_stmt->bind_param("sss", $hashed_password, $username, $userType);
             if ($update_stmt->execute()) {
                 $_SESSION['message'] = 'Password has been updated!';
                 $_SESSION['success'] = 'success';

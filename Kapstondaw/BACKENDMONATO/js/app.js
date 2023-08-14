@@ -255,8 +255,47 @@ restoreBtn.addEventListener("click", (e) => {
   });
 });
 
-let letter = "sssissssssssssssssssssssssssssssssss";
+function createAccount(that) {
+  fname = $(that).attr("data-fname");
+  mname = $(that).attr("data-mname");
+  lname = $(that).attr("data-lname");
+  age = $(that).attr("data-age");
+  gender = $(that).attr("data-gender");
+  cstatus = $(that).attr("data-cstatus");
+  street = $(that).attr("data-street");
+  dbirth = $(that).attr("data-dbirth");
+  email = $(that).attr("data-email");
 
-for (let i = 0; i < letter.length; i++) {
-  console.log(letter[i]);
+  fullname = fname + " " + mname + " " + lname;
+
+  $("#res_name").val(fullname);
+  $("#res_age").val(age);
+  $("#res_gender").val(gender);
+  $("#res_cstatus").val(cstatus);
+  $("#res_street").val(street);
+  $("#res_dbirth").val(dbirth);
+  $("#res_email").val(email);
 }
+
+const accountContainer = document.querySelector(".active_account");
+const accountBtn = document.querySelectorAll(".accountBtn");
+
+accountBtn.forEach((accBtn) => {
+  accBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    accountContainer.style.display = "flex";
+
+    const resSubmit = document.querySelector(".res_submit");
+    resSubmit.addEventListener("submit", (e) => {
+      console.log("resSubmit");
+    });
+    document.addEventListener("click", function (event) {
+      const accountForm = document.querySelector(".account");
+      let isAccountForm = accountForm.contains(event.target);
+      console.log("l2");
+      if (!isAccountForm) {
+        accountContainer.style.display = "none";
+      }
+    });
+  });
+});

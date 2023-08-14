@@ -40,6 +40,43 @@
   color: #fff;
 }
 
+.active_account {
+  background-color: rgba(0, 0, 0, 0.25);
+  height: 100vh;
+  width: clamp(275px, 100%, 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+.active_account form {
+  background-color: #fff;
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem;
+  min-width: 250px;
+  width: clamp(250px, 25%, 25%);
+}
+.active_account form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.active_account form div label {
+  margin-bottom: 0.5rem;
+}
+.active_account form div input {
+  padding: 0.2rem;
+}
+.active_account form button {
+  width: 100%;
+  padding: 0.3rem;
+  border: none;
+}
+
 .printing-container-endorsement {
   max-width: 2000px;
   height: auto;
