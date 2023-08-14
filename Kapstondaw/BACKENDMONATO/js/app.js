@@ -254,3 +254,9 @@ restoreBtn.addEventListener("click", (e) => {
     }
   });
 });
+
+let letter = "sssissssssssssssssssssssssssssssssss";
+
+for (let i = 0; i < letter.length; i++) {
+  console.log(letter[i]);
+}

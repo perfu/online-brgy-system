@@ -17,19 +17,39 @@
 
 	if(!empty($id)){
 
+		if($status !== 'Inactive') {
 		$query 		= "UPDATE tblofficials SET `name`='$name', `chairmanship`='$chair', `position`='$pos', termstart='$start', termend='$end', `status`='$status' WHERE id=$id;";	
 		$result 	= $conn->query($query);
 
 		if($result === true){
             
-			$_SESSION['message'] = 'Brgy Official has been updated!';
+			$_SESSION['message'] = 'Brgy official has been updated!';
 			$_SESSION['success'] = 'success';
 
 		}else{
 
-			$_SESSION['message'] = 'Somethin went wrong!';
+			$_SESSION['message'] = 'Something went wrong!';
 			$_SESSION['success'] = 'danger';
 		}
+	} else { 
+		$query  = "INSERT INTO officials_archive (`name`, `chairmanship`, `position`, termstart, termend, `status`) VALUES ('$name', '$chair','$pos', '$start','$end', '$status')";
+		$result 	= $conn->query($query);
+
+		if($result === true){
+            
+			$_SESSION['message'] = 'Brgy official has been saved to archive!';
+			$_SESSION['success'] = 'success';
+
+			$delete = $conn->prepare("DELETE FROM tblofficials WHERE id = ?");
+			$delete->bind_param("i", $id);
+			$delete->execute();
+
+		}else{
+
+			$_SESSION['message'] = 'Something went wrong!';
+			$_SESSION['success'] = 'danger';
+		}
+	}
 
 	}else{
 		$_SESSION['message'] = 'No Brgy Official ID found!';
