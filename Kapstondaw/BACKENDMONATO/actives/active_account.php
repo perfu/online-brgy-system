@@ -8,7 +8,9 @@
             <label for="account_password">Password</label>
             <input type="password" name='password' id="account_password">
         </div>
-        <input type="hidden" id="res_name" name="res_name">
+        <input type="hidden" id="res_firstname" name="res_firstname">
+        <input type="hidden" id="res_middlename" name="res_middlename">
+        <input type="hidden" id="res_lastname" name="res_lastname">
         <input type="hidden" id="res_age" name="res_age">
         <input type="hidden" id="res_gender" name="res_gender">
         <input type="hidden" id="res_cstatus" name="res_cstatus">

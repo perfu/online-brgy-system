@@ -25,17 +25,18 @@ if ($result->num_rows) {
         $_SESSION['username'] = $user['username'];
         $_SESSION['role'] = $user['role'];
 
-        if ($_SESSION['role'] === 'admin' || $_SESSION['role'] === 'staff') {
-            setMessageAndRedirect('You have successfully logged in to Automated Brgy Management System!', 'success', '../dashboard.php');
+        if ($_SESSION['role'] === 'user') {
+            setMessageAndRedirect('You have successfully logged in to Automated Brgy Management System!', 'success', '../main.php');
+            exit();
         } else {
-            setMessageAndRedirect('Username or password is incorrect!', 'danger', '../login.php');
+            setMessageAndRedirect('Username or password is incorrect!', 'danger', '../main.php');
         }
 
     } else {
-        setMessageAndRedirect('Username or password is incorrect!', 'danger', '../login.php');
+        setMessageAndRedirect('Username or password is incorrect!', 'danger', '../main.php');
     }
 } else {
-    setMessageAndRedirect('Username or password is incorrect!', 'danger', '../login.php');
+    setMessageAndRedirect('Username or password is incorrect!', 'danger', '../main.php');
 }
 
 $conn->close();

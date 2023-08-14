@@ -265,10 +265,9 @@ function createAccount(that) {
   street = $(that).attr("data-street");
   dbirth = $(that).attr("data-dbirth");
   email = $(that).attr("data-email");
-
-  fullname = fname + " " + mname + " " + lname;
-
-  $("#res_name").val(fullname);
+  $("#res_firstname").val(fname);
+  $("#res_middlename").val(mname);
+  $("#res_lastname").val(lname);
   $("#res_age").val(age);
   $("#res_gender").val(gender);
   $("#res_cstatus").val(cstatus);
