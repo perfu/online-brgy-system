@@ -21,11 +21,12 @@ if ($result->num_rows) {
 
     // Use password_verify to compare input password with hashed password from database
     if (password_verify($password, $user['password'])) {
-        $_SESSION['id'] = $user['id'];
-        $_SESSION['username'] = $user['username'];
-        $_SESSION['role'] = $user['role'];
 
-        if ($_SESSION['role'] === 'user') {
+
+        if ($user['role'] === 'user') {
+            $_SESSION['role'] = $user['role'];
+            $_SESSION['id'] = $user['id'];
+            $_SESSION['username'] = $user['username'];
             setMessageAndRedirect('You have successfully logged in to Automated Brgy Management System!', 'success', '../main.php');
             exit();
         } else {
