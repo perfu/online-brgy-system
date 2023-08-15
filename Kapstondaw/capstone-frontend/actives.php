@@ -88,6 +88,12 @@
             </select>
         </div>
 
+        <input type="hidden" name="" value="<?php echo $_SESSION['firstname'] ?>" id="">
+        <input type="hidden" name="" value="<?php echo $_SESSION['middlename'] ?>" id="">
+        <input type="hidden" name="" value="<?php echo $_SESSION['lastname'] ?>" id="">
+        <input type="hidden" name="" value="<?php echo $_SESSION['age'] ?>" id="">
+        <input type="hidden" name="" value="<?php echo $_SESSION['gender'] ?>" id="">
+
         <button type="submit" class="active-service-request">Request</button>
     </form>
 </div>

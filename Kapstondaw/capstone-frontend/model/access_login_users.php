@@ -27,8 +27,12 @@ if ($result->num_rows) {
             $_SESSION['role'] = $user['role'];
             $_SESSION['id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
+            $_SESSION['firstname'] = $user['firstname'];
+            $_SESSION['middlename'] = $user['middlename'];
+            $_SESSION['lastname'] = $user['lastname'];
+            $_SESSION['age'] = $user['age'];
+            $_SESSION['gender'] = $user['gender'];
             setMessageAndRedirect('You have successfully logged in to Automated Brgy Management System!', 'success', '../main.php');
-            exit();
         } else {
             setMessageAndRedirect('Username or password is incorrect!', 'danger', '../main.php');
         }
