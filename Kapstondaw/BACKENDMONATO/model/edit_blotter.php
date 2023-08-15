@@ -20,10 +20,10 @@
 
 	if(!empty($id)){
 
-		$query 		= "UPDATE tblblotter SET `complainant`='$complainant', `respondent`='$respondent', `victim`='$victim',`type`='$type', `location`='$location', `date`='$date', 
-                        `time`='$time', `status`='$status', `details`='$details' WHERE id=$id;";	
-		$result 	= $conn->query($query);
-
+		if($status !== 'settled') {
+			$query = "UPDATE tblblotter SET `complainant`='$complainant', `respondent`='$respondent', `victim`='$victim',`type`='$type', `location`='$location', `date`='$date', 
+			`time`='$time', `status`='$status', `details`='$details' WHERE id=$id;";	
+			$result 	= $conn->query($query);
 		if($result === true){
             
 			$_SESSION['message'] = 'Blotter details has been updated!';
@@ -35,6 +35,26 @@
 			$_SESSION['success'] = 'danger';
 		}
 
+		} else {
+			$query  = "INSERT INTO blotter_archive (`complainant`, `respondent`, `victim`, `type`, `location`, `date`, `time`, `details`, `status`) VALUES ('$complainant', '$respondent','$victim', '$type','$location', '$date', '$time', '$details', '$status')";
+			$result 	= $conn->query($query);
+
+		if($result === true){
+            
+			$_SESSION['message'] = 'Blotter has been saved to archived!';
+			$_SESSION['success'] = 'success';
+
+			$delete = $conn->prepare("DELETE FROM tblblotter WHERE id = ?");
+			$delete->bind_param("i", $id);
+			$delete->execute();
+
+		}else{
+
+			$_SESSION['message'] = 'Somethin went wrong!';
+			$_SESSION['success'] = 'danger';
+		}
+
+		}
 	}else{
 		$_SESSION['message'] = 'No Blotter ID found!';
 		$_SESSION['success'] = 'danger';

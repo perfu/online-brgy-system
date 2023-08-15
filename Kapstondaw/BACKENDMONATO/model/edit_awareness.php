@@ -17,10 +17,9 @@
 
 	if(!empty($id)){
 
-		$query = "UPDATE tblawareness SET `name`='$name', `date`='$date', `time`='$time', `location`='$location', `details`='$details', `status`='$status' WHERE id=$id;";
-
-		$result 	= $conn->query($query);
-
+		if($status !== 'settled') {
+			$query = "UPDATE tblawareness SET `name`='$name', `date`='$date', `time`='$time', `location`='$location', `details`='$details', `status`='$status' WHERE id=$id;";	
+			$result 	= $conn->query($query);
 		if($result === true){
             
 			$_SESSION['message'] = 'Awareness details has been updated!';
@@ -32,8 +31,28 @@
 			$_SESSION['success'] = 'danger';
 		}
 
+		} else {
+			$query  = "INSERT INTO awareness_archive (`name`, `date`, `time`, `location`, `details`, `status`) VALUES ('$name','$date','$time', '$location', '$details', '$status')";
+			$result 	= $conn->query($query);
+
+		if($result === true){
+            
+			$_SESSION['message'] = 'Awareness has been saved to archived!';
+			$_SESSION['success'] = 'success';
+
+			$delete = $conn->prepare("DELETE FROM tblawareness WHERE id = ?");
+			$delete->bind_param("i", $id);
+			$delete->execute();
+
+		}else{
+
+			$_SESSION['message'] = 'Somethin went wrong!';
+			$_SESSION['success'] = 'danger';
+		}
+
+		}
 	}else{
-		$_SESSION['message'] = 'No Awareness found!';
+		$_SESSION['message'] = 'No Awareness ID found!';
 		$_SESSION['success'] = 'danger';
 	}
 

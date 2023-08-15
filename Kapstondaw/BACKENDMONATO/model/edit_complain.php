@@ -17,10 +17,9 @@
 
 	if(!empty($id)){
 
-		$query = "UPDATE tblcomplain SET `complainant`='$complainant', `date`='$date', `location`='$location', `time`='$time', `details`='$details', `status`='$status' WHERE id=$id;";
-
-		$result 	= $conn->query($query);
-
+		if($status !== 'settled') {
+			$query = "UPDATE tblcomplain SET `complainant`='$complainant', `date`='$date', `time`='$time', `location`='$location', `details`='$details', `status`='$status' WHERE id=$id;";	
+			$result 	= $conn->query($query);
 		if($result === true){
             
 			$_SESSION['message'] = 'Complain details has been updated!';
@@ -32,6 +31,26 @@
 			$_SESSION['success'] = 'danger';
 		}
 
+		} else {
+			$query  = "INSERT INTO complain_archive (`complainant`, `date`, `time`, `location`, `details`, `status`) VALUES ('$complainant','$date','$time', '$location', '$details', '$status')";
+			$result 	= $conn->query($query);
+
+		if($result === true){
+            
+			$_SESSION['message'] = 'Complain has been saved to archived!';
+			$_SESSION['success'] = 'success';
+
+			$delete = $conn->prepare("DELETE FROM tblcomplain WHERE id = ?");
+			$delete->bind_param("i", $id);
+			$delete->execute();
+
+		}else{
+
+			$_SESSION['message'] = 'Somethin went wrong!';
+			$_SESSION['success'] = 'danger';
+		}
+
+		}
 	}else{
 		$_SESSION['message'] = 'No Complain ID found!';
 		$_SESSION['success'] = 'danger';
