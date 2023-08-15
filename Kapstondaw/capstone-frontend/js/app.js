@@ -68,11 +68,17 @@ const subMenuEl = document.querySelectorAll(".sub-menu");
 //   });
 // });
 
+// * Services
+const activeForm = document.querySelectorAll(".active-form");
+
 const serviceBtn = document.querySelectorAll(".service-btn");
 const serviceEl = document.querySelectorAll(".active-service");
 const closeService = document.querySelectorAll(".active-service-close");
 const submitRequest = document.querySelectorAll(".active-service-request");
 const successEl = document.querySelector(".active-success");
+const forEl = document.querySelectorAll(".for");
+const requestorEl = document.querySelectorAll(".requestor");
+const requestorName = document.querySelectorAll(".requestorName");
 
 serviceBtn.forEach((btn, i) => {
   btn.addEventListener("click", () => {
@@ -82,13 +88,27 @@ serviceBtn.forEach((btn, i) => {
       serviceEl[i].style.display = "none";
     });
 
-    submitRequest[i].addEventListener("click", (e) => {
-      successEl.style.display = "block";
+    forEl.forEach((forService, i) => {
+      forService.addEventListener("change", (e) => {
+        if (e.target.value === "Someone") {
+          requestorEl[i].style.display = "flex";
+          requestorName[i].setAttribute("required", "");
+        } else {
+          requestorEl[i].style.display = "none";
+          requestorName[i].removeAttribute("required", "");
+        }
+      });
+    });
 
+    activeForm[i].addEventListener("submit", (e) => {
+      e.preventDefault();
+      successEl.style.display = "block";
+      serviceEl[i].style.display = "block";
+      console.log("asss");
       setTimeout(() => {
         successEl.style.display = "none";
         serviceEl[i].style.display = "none";
-      }, 1000);
+      }, 3000);
     });
   });
 });
@@ -104,10 +124,12 @@ serviceBtn.forEach((btn, i) => {
 //   $("#active-service-brgyClearance").hide();
 // });
 
-$(".active-service-request").on("click", (e) => {
-  $(".active-success").show();
-  setTimeout(() => {
-    $(".active-success").hide();
-    $("#active-service-brgyClearance").hide();
-  }, 1000);
-});
+// $(".active-service-request").on("click", (e) => {
+//   $(".active-success").show();
+//   setTimeout(() => {
+//     $(".active-success").hide();
+//     // $("#active-service-brgyClearance").hide();
+//   }, 5000);
+// });
+
+// * End of services

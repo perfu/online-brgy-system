@@ -37,110 +37,126 @@
     </form>
 </div>
 
+
+<?php if(isset($_SESSION['message'])) { ?>
 <div class="active-success">
     <div class="container">
-        <h2>SUCCESSFULLY REQUEST!</h2>
+        <h2><?php echo ($_SESSION['message']); ?>
+        </h2>
         <p>Kindly go to barangay to barangay to claim your certificate.</p>
     </div>
 </div>
+<?php } ?>
+
 
 <div class="active-service" id="active-service">
-    <form>
+    <form class="active-form">
         <p class="active-service-close">x</p>
         <h2>Barangay ID</h2>
         <div class="container">
             <label for="contact-number">Contact Number</label>
-            <input type="text" name="name" id="contact-number" placeholder="Enter Contact Number" />
+            <input required type="text" name="name" id="contact-number" placeholder="Enter Contact Number" />
         </div>
         <button type="submit" class="active-service-request">Request</button>
     </form>
 </div>
 
+
 <div class="active-service" id="active-service">
-    <form>
+    <form class="active-form">
         <p class="active-service-close">x</p>
         <h2>Barangay Clearance</h2>
         <div class="container">
             <label for="name">Name</label>
-            <input type="text" name="name" id="name" placeholder="Enter your name" />
+            <input required type="text" name="name" id="name" placeholder="Enter your name" />
         </div>
         <div class="container">
             <label for="purpose">Purpose</label>
-            <textarea name="purpose" id="purpose" placeholder="Enter your purpose"></textarea>
+            <textarea required name="purpose" id="purpose" placeholder="Enter your purpose"></textarea>
         </div>
         <button type="submit" class="active-service-request">Request</button>
     </form>
 </div>
 
 <div class="active-service" id="active-service">
-    <form>
+    <form class="active-form" action="./model/request_endoresement.php" method="POST">
         <p class="active-service-close">x</p>
         <h2>Endorsement</h2>
+        <div class="container requestor">
+            <label for="requestor">Requestor</label>
+            <input class="requestorName" type="text" name="requestor" id="requestor" placeholder="Enter requestor name">
+        </div>
         <div class="container">
             <label for="purpose">Purpose</label>
             <textarea name="purpose" id="purpose" placeholder="Enter your purpose"></textarea>
         </div>
         <div class="container">
             <label for="for">For</label>
-            <select name="" id="for">
+            <select name="documentFor" id="for" class="for">
                 <option value="self">For self</option>
-                <option value="someone-else">For someone else</option>
+                <option value="Someone">For someone else</option>
             </select>
         </div>
 
-        <input type="hidden" name="" value="<?php echo $_SESSION['firstname'] ?>" id="">
-        <input type="hidden" name="" value="<?php echo $_SESSION['middlename'] ?>" id="">
-        <input type="hidden" name="" value="<?php echo $_SESSION['lastname'] ?>" id="">
-        <input type="hidden" name="" value="<?php echo $_SESSION['age'] ?>" id="">
-        <input type="hidden" name="" value="<?php echo $_SESSION['gender'] ?>" id="">
+        <input type="hidden" name="applicant"
+            value="<?php echo $_SESSION['firstname'].' '. $_SESSION['middlename'].' '.$_SESSION['lastname']  ?>" id="">
+        <input type="hidden" name="address" value="<?php echo $_SESSION['street'] ?>" id="">
 
         <button type="submit" class="active-service-request">Request</button>
     </form>
 </div>
 
 <div class="active-service" id="active-service">
-    <form>
+    <form class="active-form" action="./model/request_endoresement.php" method="POST">
         <p class="active-service-close">x</p>
         <h2>Certificate of Indigency</h2>
+        <div class="container requestor">
+            <label for="requestor">Requestor</label>
+            <input class="requestorName" type="text" name="requestor" id="requestor" placeholder="Enter requestor name">
+        </div>
         <div class="container">
             <label for="purpose">Purpose</label>
-            <textarea name="purpose" id="purpose" placeholder="Enter your purpose"></textarea>
+            <textarea required name="purpose" id="purpose" placeholder="Enter your purpose"></textarea>
         </div>
         <div class="container">
             <label for="for">For</label>
-            <select name="" id="for">
+            <select name="documentFor" id="For" class="for">
                 <option value="self">For self</option>
-                <option value="someone-else">For someone else</option>
+                <option value="Someone">For someone else</option>
             </select>
         </div>
+
+        <input type="hidden" name="applicant"
+            value="<?php echo $_SESSION['firstname'].' '. $_SESSION['middlename'].' '.$_SESSION['lastname']  ?>" id="">
+        <input type="hidden" name="address" value="<?php echo $_SESSION['street'] ?>" id="">
 
         <button type="submit" class="active-service-request">Request</button>
     </form>
 </div>
 
 <div class="active-service" id="active-service">
-    <form>
+    <form class="active-form">
         <p class="active-service-close">x</p>
         <h2>Business Closure</h2>
         <div class="container">
             <label for="business-name">Name of Business</label>
-            <input type="text" name="name" id="business-name" placeholder="Enter Business Name" />
+            <input required type="text" name="name" id="business-name" placeholder="Enter Business Name" />
         </div>
         <div class="container">
             <label for="business-owner-name">Business Owner Name</label>
-            <input type="text" name="name" id="business-owner-name" placeholder="Enter Business Owner" />
+            <input required type="text" name="name" id="business-owner-name" placeholder="Enter Business Owner" />
         </div>
         <div class="container">
             <label for="business-address">Address of Business</label>
-            <input type="text" name="name" id="business-address" placeholder="Enter Business Address" />
+            <input required type="text" name="name" id="business-address" placeholder="Enter Business Address" />
         </div>
         <div class="container">
             <label for="date-of-closure">Date of Closure</label>
-            <input type="text" name="name" id="date-of-closure" placeholder="Enter Date of Closure" />
+            <input required type="text" name="name" id="date-of-closure" placeholder="Enter Date of Closure" />
         </div>
         <div class="container">
             <label for="reason">Reason</label>
-            <textarea name="purpose" id="reason" placeholder="Enter Reason"></textarea>
+            <textarea required name="purpose" id="reason" placeholder="Enter Reason"></textarea>
         </div>
         <button type="submit" class="active-service-request">Request</button>
     </form>
