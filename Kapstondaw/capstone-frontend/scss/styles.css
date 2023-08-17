@@ -1151,7 +1151,7 @@ footer .com ul li {
 .active-success {
   background-color: rgba(0, 0, 0, 0.35);
   border: none;
-  display: none;
+  display: block;
   align-items: center;
   justify-content: center;
   position: absolute;
@@ -1159,7 +1159,7 @@ footer .com ul li {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 12;
+  z-index: 100;
 }
 .active-success .container {
   position: sticky;

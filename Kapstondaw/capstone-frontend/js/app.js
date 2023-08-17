@@ -99,19 +99,19 @@ serviceBtn.forEach((btn, i) => {
         }
       });
     });
-
-    activeForm[i].addEventListener("submit", (e) => {
-      e.preventDefault();
-      successEl.style.display = "block";
-      serviceEl[i].style.display = "block";
-      console.log("asss");
-      setTimeout(() => {
-        successEl.style.display = "none";
-        serviceEl[i].style.display = "none";
-      }, 3000);
-    });
   });
 });
+
+// TODO it shows the message but it goes to the top to show the message
+document.addEventListener("DOMContentLoaded", function () {
+  if (successEl) {
+    // successEl.style.display = "block";
+    setTimeout(function () {
+      successEl.style.display = "none";
+    }, 2000);
+  }
+});
+// TODO end
 
 // $(".service-btn").on("click", (e) => {
 //   e.preventDefault();

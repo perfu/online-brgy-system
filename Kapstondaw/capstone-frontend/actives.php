@@ -38,15 +38,19 @@
 </div>
 
 
-<?php if(isset($_SESSION['message'])) { ?>
+// * new update to message pop up
+<?php 
+if(isset($_SESSION['message'])) 
+{ ?>
 <div class="active-success">
     <div class="container">
-        <h2><?php echo ($_SESSION['message']); ?>
-        </h2>
-        <p>Kindly go to barangay to barangay to claim your certificate.</p>
+        <h2><?php echo $_SESSION['message']; ?></h2>
+        <p>Kindly go to barangay to claim your certificate.</p>
     </div>
 </div>
-<?php } ?>
+<?php unset($_SESSION['message']);
+} ?>
+// * end
 
 
 <div class="active-service" id="active-service">

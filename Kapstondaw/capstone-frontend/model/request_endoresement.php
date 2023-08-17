@@ -6,6 +6,8 @@
             header("Location: " . $_SERVER["HTTP_REFERER"]);
         }
     }
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     $applicant    = $conn->real_escape_string($_POST['applicant']);
     $requestor    = $conn->real_escape_string($_POST['requestor']);
@@ -33,7 +35,10 @@
         $_SESSION['message'] = 'Please fill up the form completely!';
         $_SESSION['success'] = 'danger';
     }
-
+    } else {
+        $_SESSION['message'] = 'Something went wrong!';
+        $_SESSION['success'] = 'danger';
+    }
     header("Location: ../main.php");
 
 	$conn->close();
