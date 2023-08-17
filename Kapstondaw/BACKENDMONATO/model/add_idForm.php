@@ -10,12 +10,12 @@
     $fullname         = $conn->real_escape_string($_POST['fullname']);
     $documentFor      = $conn->real_escape_string($_POST['documentFor']);
     $purpose          = $conn->real_escape_string($_POST['purpose']);
-    $dateRequested    = $conn->real_escape_string($_POST['dateRequested']);
+    // $dateRequested    = $conn->real_escape_string($_POST['dateRequested']);
 
-    if(!empty($fullname) && !empty($documentFor) && !empty($purpose) && !empty($dateRequested)){
+    if(!empty($fullname) && !empty($documentFor) && !empty($purpose)){
 
-        $insert  = "INSERT INTO tbl_idform (`fullname`, `documentFor`, `purpose`, `date-requested`) 
-                    VALUES ('$fullname', '$documentFor', '$purpose', '$dateRequested')";
+        $insert  = "INSERT INTO tbl_idform (`fullname`, `documentFor`, `purpose`) 
+                    VALUES ('$fullname', '$documentFor', '$purpose')";
         $result  = $conn->query($insert);
 
         if($result === true){

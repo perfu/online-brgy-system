@@ -1,59 +1,70 @@
+<?php include '../server/server.php' ?>
+<?php
+    $id = $_GET['id'];
+    $query = "SELECT * FROM tbl_certofindigency WHERE `id`='$id'";
+    $result = $conn->query($query);
+    $certofindigency = $result->fetch_assoc();
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Generate Certificate of Indigency For Someone</title>
-        <link rel="stylesheet" href="../style/generateCert.css">
-    </head>
-    <body>
-  <!-- HEADER -->
-  <div class="container">
-    <div class="layer1">Barangay Zone IV Dasmarinas Cavite
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Certificate of Indigency For Someone</title>
+    <link rel="stylesheet" href="../style/generateCert.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <div class="container">
+        <div class="layer1">Barangay Zone IV Dasmarinas Cavite
+        </div>
+        <div class="layer2">
+            <img src="../vector/Vector 1.png" alt="">
+        </div>
     </div>
-    <div class="layer2">
-        <img src="../vector/Vector 1.png" alt=""></div>
-</div>
 
-<!-- SIDE BAR -->
-<div class="sidebar">
-    <div class="slayer1">
-        <img class="vector-side" src="../vector/layerside.png" alt="">
-        <img class="db-icon" src="../icons/dashboard-icon.png" alt=""></img>
-        <img class="bo-icon" src="../icons/B_Officials-iocn.png" alt=""></img>
-        <img class="ri-icon" src="../icons/residents-icon.png" alt=""></img>
-        <img class="cc-icon" src="../icons/certificate-icon.png" alt=""></img>
-        <img class="rs-icon" src="../icons/blotter-icon.png" alt=""></img>
-        <img class="um-icon" src="../icons/user-icon.png" alt=""></img>
-        <img class="cm-icon" src="../icons/content-icon.png" alt=""></img>
-    </img>
-</div>
+    <!-- SIDE BAR -->
+    <div class="sidebar">
+        <div class="slayer1">
+            <img class="vector-side" src="../vector/layerside.png" alt="">
+            <img class="db-icon" src="../icons/dashboard-icon.png" alt=""></img>
+            <img class="bo-icon" src="../icons/B_Officials-iocn.png" alt=""></img>
+            <img class="ri-icon" src="../icons/residents-icon.png" alt=""></img>
+            <img class="cc-icon" src="../icons/certificate-icon.png" alt=""></img>
+            <img class="rs-icon" src="../icons/blotter-icon.png" alt=""></img>
+            <img class="um-icon" src="../icons/user-icon.png" alt=""></img>
+            <img class="cm-icon" src="../icons/content-icon.png" alt=""></img>
+            </img>
+        </div>
 
-<div class="slayer2">
-    <a class="db" href="../dashboard.php">Dashboard</a>
-    <a class="bo" href="../barangayOfficials.php">Barangay Officials</a>
-    <a class="ri" href="../residentInfo.php">Residents Information</a>
-    <a class="cc" href="#">Certificate/Clearance</a>
-    <a href="../idForm.php" class="idform">Identification Form</a>
-    <a href="../brgyClearance.php" class="b-clearance">Barangay Clearance</a>
-    <a href="../endorsmentCert.php" class="e-certificate">E-Certificate</a>
-    <a href="../certOfIndigency.php" class="c-indigency">Cetificate of Indigency</a>
-    <a href="../certOfLBR.php" class="c-latebirth">Certificate Of LBR</a>
-    <a href="../businessClearance.php" class="bb-clearance">Business Clearance</a>
-    <a class="rs" href="#">Reports</a>
-    <a href="../blotter.php" class="blotter1">Blotter records</a>
-    <a href="../complain.php" class="complain1">Complain records</a>
-    <a href="../awareness.php" class="awareness1">Awereness</a>
-    <a class="um" href="#">User Management</a>
-    <a href="../users.php" class="users">Users</a>
-    <a class="cm" href="#">Content Management</a>
-    <a href="#" class="b-information" id="b-info">Barangay Information</a>
-    <a href="../announcement.php" class="announcement">Announcement</a>
-    <a href="../backup" class="backup">Backup</a>
-    <a href="../restore" class="restore">Restore</a>
-    <a href="../request.php" class="request">Requested Documents</a>
-</div>
-</div>
+        <div class="slayer2">
+            <a class="db" href="../dashboard.php">Dashboard</a>
+            <a class="bo" href="../barangayOfficials.php">Barangay Officials</a>
+            <a class="ri" href="../residentInfo.php">Residents Information</a>
+            <a class="cc" href="#">Certificate/Clearance</a>
+            <a href="../idForm.php" class="idform">Identification Form</a>
+            <a href="../brgyClearance.php" class="b-clearance">Barangay Clearance</a>
+            <a href="../endorsmentCert.php" class="e-certificate">E-Certificate</a>
+            <a href="../certOfIndigency.php" class="c-indigency">Cetificate of Indigency</a>
+            <a href="../certOfLBR.php" class="c-latebirth">Certificate Of LBR</a>
+            <a href="../businessClearance.php" class="bb-clearance">Business Clearance</a>
+            <a class="rs" href="#">Reports</a>
+            <a href="../blotter.php" class="blotter1">Blotter records</a>
+            <a href="../complain.php" class="complain1">Complain records</a>
+            <a href="../awareness.php" class="awareness1">Awereness</a>
+            <a class="um" href="#">User Management</a>
+            <a href="../users.php" class="users">Users</a>
+            <a class="cm" href="#">Content Management</a>
+            <a href="#" class="b-information" id="b-info">Barangay Information</a>
+            <a href="../announcement.php" class="announcement">Announcement</a>
+            <a href="../backup" class="backup">Backup</a>
+            <a href="../restore" class="restore">Restore</a>
+            <a href="../request.php" class="request">Requested Documents</a>
+        </div>
+    </div>
 
     <div class="printing-container-indigency">
         <div class="title-cont">
@@ -66,7 +77,7 @@
             <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
         </div>
 
-        <div class="form-container-brgyClearance"  id="printMe">
+        <div class="form-container-brgyClearance" id="printMe">
             <form action="#" class="paper" style="border:1px solid black">
 
                 <div class="header-cont" style="display: flex;  flex-direction: row;
@@ -125,7 +136,7 @@
                     margin-right: 10px;">
                 </div>
 
-               <div class="lines" style="border-bottom:1px solid black"></div>
+                <div class="lines" style="border-bottom:1px solid black"></div>
 
                 <div class="body-container" style="display: flex;
                 flex-direction: row;
@@ -147,7 +158,7 @@
                             height: 830px;
                             margin-top: 1px;">
                         </div>
-                    
+
                         <p class="b-captain" style="position: relative; display: flex; flex-direction: column;  justify-content: center;
                         align-items: center;
                         margin-top: 30px;
@@ -157,7 +168,8 @@
                             font-size: 14px;
                             font-style: normal;
                             font-weight: 700;
-                            line-height: normal;  ">MERCADO P. HAYAG</span>Punong Barangay</p>
+                            line-height: normal;  ">MERCADO P. HAYAG</span>Punong Barangay
+                        </p>
                         <p class="k-title" style="color: #000;
                             font-family: Caladea;
                             font-size: 14px;
@@ -186,7 +198,9 @@
                                 font-size: 14px;
                                 font-style: normal;
                                 font-weight: 700;
-                                line-height: normal; ">JORGE P. CANTIMBUHAN</span>Committee on Peace & Order/Human Rights</p>
+                                line-height: normal; ">JORGE P. CANTIMBUHAN</span>Committee on Peace & Order/Human
+                                Rights
+                            </p>
                             <p class="b-councilor" style=" margin-left: 10px;
                             margin-top: 15px;
                             display: flex;
@@ -196,7 +210,8 @@
                                 font-size: 14px;
                                 font-style: normal;
                                 font-weight: 700;
-                                line-height: normal; ">ALEXANDER P. GENEVEO</span>Committee on Rules & Privileges</p>
+                                line-height: normal; ">ALEXANDER P. GENEVEO</span>Committee on Rules & Privileges
+                            </p>
                             <p class="b-councilor" style=" margin-left: 10px;
                             margin-top: 15px;
                             display: flex;
@@ -206,7 +221,8 @@
                                 font-size: 14px;
                                 font-style: normal;
                                 font-weight: 700;
-                                line-height: normal; ">EFREN F. LARA</span>Committee on Budget & Appropration</p>
+                                line-height: normal; ">EFREN F. LARA</span>Committee on Budget & Appropration
+                            </p>
                             <p class="b-councilor" style=" margin-left: 10px;
                             margin-top: 15px;
                             display: flex;
@@ -216,7 +232,8 @@
                                 font-size: 14px;
                                 font-style: normal;
                                 font-weight: 700;
-                                line-height: normal; ">IAN MARK S. MENDOZA</span>Committee on Health & Sanitation</p>
+                                line-height: normal; ">IAN MARK S. MENDOZA</span>Committee on Health & Sanitation
+                            </p>
                             <p class="b-councilor" style=" margin-left: 10px;
                             margin-top: 15px;
                             display: flex;
@@ -226,7 +243,8 @@
                                 font-size: 14px;
                                 font-style: normal;
                                 font-weight: 700;
-                                line-height: normal; ">HONESTO P. GUYAMIN</span>Committee on Cooperatives/Livelihood</p>
+                                line-height: normal; ">HONESTO P. GUYAMIN</span>Committee on Cooperatives/Livelihood
+                            </p>
                             <p class="b-councilor" style=" margin-left: 10px;
                             margin-top: 15px;
                             display: flex;
@@ -236,7 +254,9 @@
                                 font-size: 14px;
                                 font-style: normal;
                                 font-weight: 700;
-                                line-height: normal; ">LEO L. FERRER</span>Committee on Women & Family/Sports Development</p>
+                                line-height: normal; ">LEO L. FERRER</span>Committee on Women & Family/Sports
+                                Development
+                            </p>
                             <p class="b-councilor" style=" margin-left: 10px;
                             margin-top: 15px;
                             display: flex;
@@ -246,7 +266,8 @@
                                 font-size: 14px;
                                 font-style: normal;
                                 font-weight: 700;
-                                line-height: normal; ">RELLY Q. KALUGDAN</span>Committee on Infrastructure</p>
+                                line-height: normal; ">RELLY Q. KALUGDAN</span>Committee on Infrastructure
+                            </p>
                             <p class="b-councilor1" style=" margin-left: 10px;
                             margin-top: 35px;
                             display: flex;
@@ -256,7 +277,8 @@
                                 font-size: 14px;
                                 font-style: normal;
                                 font-weight: 700;
-                                line-height: normal; ">FRANCES JANKEE T. LACSADO</span>Brgy. Treasurer</p>
+                                line-height: normal; ">FRANCES JANKEE T. LACSADO</span>Brgy. Treasurer
+                            </p>
                             <p class="b-councilor1" style="margin-left: 10px;
                             margin-top: 35px;
                             display: flex;
@@ -266,7 +288,8 @@
                                 font-size: 14px;
                                 font-style: normal;
                                 font-weight: 700;
-                                line-height: normal; ">JERIKA V. LARA</span>Brgy. Secretary</p>
+                                line-height: normal; ">JERIKA V. LARA</span>Brgy. Secretary
+                            </p>
                             <p class="b-councilor1" style=" margin-left: 10px;
                             margin-top: 35px;
                             display: flex;
@@ -276,7 +299,8 @@
                                 font-size: 14px;
                                 font-style: normal;
                                 font-weight: 700;
-                                line-height: normal; ">JERALD Y. CORPUZ</span>SK Chairperson</p>
+                                line-height: normal; ">JERALD Y. CORPUZ</span>SK Chairperson
+                            </p>
                         </div>
                     </div>
 
@@ -306,7 +330,8 @@
                             font-size: 18px;
                             font-style: normal;
                             font-weight: 700;
-                            line-height: normal;">Jennifer Austria Barzaga</span></p>
+                            line-height: normal;">Jennifer Austria Barzaga</span>
+                        </p>
                         <p class="position" style="color: #000;
                         font-family: Caladea;
                         font-size: 13px;
@@ -330,7 +355,8 @@
                         font-weight: 400;
                         line-height: normal;
                         margin-top: 50px;">This is certify that
-                            <input type="text" id="name" placeholder="NAME OF REQUESTOR" style=" color: #000;
+                            <input type="text" value="<?php echo $certofindigency['name-of-requestor']?>" id="name"
+                                placeholder="NAME OF REQUESTOR" style=" color: #000;
                             font-family: Caladea;
                             font-size: 19px;
                             font-style: normal;
@@ -340,7 +366,8 @@
                             border: none;
                             border-bottom: 1px solid black;
                             width: 200px;">. is a Filipino Citizen and bonafide resident of
-                            <input type="text" id="address" placeholder="ADDRESS" style="  color: #000;
+                            <input type="text" value="<?php echo $certofindigency['address']?>" id="address"
+                                placeholder="ADDRESS" style="  color: #000;
                             font-family: Caladea;
                             font-size: 19px;
                             font-style: normal;
@@ -349,7 +376,8 @@
               
                             border: none;
                             border-bottom: 1px solid black;
-                            width: 200px;">., Brgy. Zone IV, Dasmarinas City, Cavite.</p>
+                            width: 200px;">., Brgy. Zone IV, Dasmarinas City, Cavite.
+                        </p>
                         <p class="second-p" style=" text-indent: 40px;
                         color: #000;
                         font-family: Caladea;
@@ -367,11 +395,9 @@
                         font-weight: 400;
                         line-height: normal;
                         margin-top: 50px;">This certification is being issued upon the request of above
-                            mention name for the purpose/s of her Financial/Medical Assistance 
-                            <input
-                                type="text"
-                                id="purpose"
-                                placeholder="PURPOSE"  style=" color: #000;
+                            mention name for the purpose/s of her Financial/Medical Assistance
+                            <input type="text" value="<?php echo $certofindigency['purpose']?>" id="purpose"
+                                placeholder="PURPOSE" style=" color: #000;
                                 font-family: Caladea;
                                 font-size: 19px;
                                 font-style: normal;
@@ -382,7 +408,8 @@
                                 border-bottom: 1px solid black;
                                 width: 200px;">
                             of her husband,
-                            <input type="text" id="name2" placeholder="NAME OF APPLICANT" style=" color: #000;
+                            <input type="text" value="<?php echo $certofindigency['name-of-applicant']?>" id="name2"
+                                placeholder="NAME OF APPLICANT" style=" color: #000;
                             font-family: Caladea;
                             font-size: 19px;
                             font-style: normal;
@@ -391,7 +418,8 @@
               
                             border: none;
                             border-bottom: 1px solid black;
-                            width: 200px;">.</p>
+                            width: 200px;">.
+                        </p>
 
                         <div class="date-time" id="date-time" style="color: #000;
                         font-family: Caladea;
@@ -423,7 +451,8 @@
                             font-size: 18px;
                             font-style: normal;
                             font-weight: 700;
-                            line-height: normal;">MERCADO P. HAYAG</span>Punong Barangay</p>
+                            line-height: normal;">MERCADO P. HAYAG</span>Punong Barangay
+                        </p>
 
                         <div class="watermark-cont-indigency" style=" position: relative;
                         margin-top: -540px;
@@ -440,16 +469,17 @@
         </div>
     </div>
     <script>
-        function printDiv(divName) {
-            var printContents = document.getElementById(divName).innerHTML;
-            var originalContents = document.body.innerHTML;
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
 
-            document.body.innerHTML = printContents;
-            window.print();
-            document.body.innerHTML = originalContents;
-        }
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
     </script>
 </body>
+
 </html>
 
 <script>
@@ -474,7 +504,9 @@ function getDaySuffix(day) {
 function updateDate() {
     const now = new Date();
     const day = now.getDate();
-    const month = now.toLocaleString("en-US", {month: "long"});
+    const month = now.toLocaleString("en-US", {
+        month: "long"
+    });
     const year = now.getFullYear();
 
     // Get the day suffix

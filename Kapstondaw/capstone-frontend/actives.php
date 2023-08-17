@@ -38,7 +38,6 @@
 </div>
 
 
-// * new update to message pop up
 <?php 
 if(isset($_SESSION['message'])) 
 { ?>
@@ -50,7 +49,6 @@ if(isset($_SESSION['message']))
 </div>
 <?php unset($_SESSION['message']);
 } ?>
-// * end
 
 
 <div class="active-service" id="active-service">
@@ -61,6 +59,16 @@ if(isset($_SESSION['message']))
             <label for="contact-number">Contact Number</label>
             <input required type="text" name="name" id="contact-number" placeholder="Enter Contact Number" />
         </div>
+        <div class="container">
+            <label for="for">For</label>
+            <select name="documentFor" id="for" class="for">
+                <option value="self">For self</option>
+                <option value="Someone">For someone else</option>
+            </select>
+        </div>
+        <input type="hidden" name="fullname"
+            value="<?php echo $_SESSION['firstname'].' '. $_SESSION['middlename'].' '.$_SESSION['lastname']  ?>" id="">
+        <input type="hidden" name="address" value="<?php echo $_SESSION['street'] ?>" id="">
         <button type="submit" class="active-service-request">Request</button>
     </form>
 </div>
