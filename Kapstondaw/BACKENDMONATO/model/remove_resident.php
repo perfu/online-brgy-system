@@ -82,7 +82,7 @@ include '../server/server.php';
 
 		$_SESSION['message'] = 'Missing Resident ID!';
 		$_SESSION['success'] = 'danger';
-	}
+	}	
 
 	header("Location: ../residentInfo.php");
 	$conn->close();

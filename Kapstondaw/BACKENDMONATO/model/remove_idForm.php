@@ -10,12 +10,12 @@
 	$id 	= $conn->real_escape_string($_GET['id']);
 
 	if($id != ''){
-		$query 		= "DELETE FROM tblofficials WHERE id = '$id'";
+		$query 		= "DELETE FROM tbl_idform WHERE id = '$id'";
 		
 		$result 	= $conn->query($query);
 		
 		if($result === true){
-            $_SESSION['message'] = 'Official has been removed!';
+            $_SESSION['message'] = 'idForm has been removed!';
             $_SESSION['success'] = 'danger';
             
         }else{
@@ -24,9 +24,9 @@
         }
 	}else{
 
-		$_SESSION['message'] = 'Missing Official ID!';
+		$_SESSION['message'] = 'Missing idForm ID!';
 		$_SESSION['success'] = 'danger';
 	}
 
-    header("Location: ../barangayOfficials.php");
+    header("Location: ../idForm.php");
 	$conn->close();

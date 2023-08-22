@@ -44,7 +44,6 @@ if(isset($_SESSION['message']))
 <div class="active-success">
     <div class="container">
         <h2><?php echo $_SESSION['message']; ?></h2>
-        <p>Kindly go to barangay to claim your certificate.</p>
     </div>
 </div>
 <?php unset($_SESSION['message']);
